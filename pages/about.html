@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About &amp; Contact | The Bookedia</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+.font-headline-xl {
+    font-family: "EB Garamond", serif
+    }
+.font-headline-lg {
+    font-family: "EB Garamond", serif
+    }
+.font-headline-lg-mobile {
+    font-family: "EB Garamond", serif
+    }
+.font-body-md {
+    font-family: "Manrope", sans-serif
+    }
+.font-body-lg {
+    font-family: "Manrope", sans-serif
+    }
+.font-label-md {
+    font-family: "Manrope", sans-serif
+    }
+.paper-texture {
+    background-color: #fcf9f2;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuA7dx8uV-4R1d6mu8fC07PBhP-JoiRKPS3D9eni6lHd-GnuQhp3yKKJjHp3AScdMN_c_A5o7T3QQHoozROCk26bUJGEL6YdxclneEnr_ZvvF7ssNsavx9v0NwQG08f5G9j0jsdp1ERnsDYK-Pj4QEgD121cm_F_e-bUDkxCIsjmiyMAGnVLVMC176EW8cQMI8BkIrzpWh0OBYKCv1VnEp_9jK6xNjmPQlVS0EjnHAu3L3S13tDCQK94TxMkSCsE_lmye1552DfWy0t_)
+    }
+.bookplate-border {
+    border: 1px solid #d5c3bd;
+    position: relative;
+    padding: 24px
+    }
+.bookplate-border::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+    border: 1px solid #d5c3bd;
+    pointer-events: none
+    }
+.ex-libris-badge {
+    background: linear-gradient(135deg, #ac8c52 0%, #e6c182 50%, #ac8c52 100%);
+    border: 1px solid #271900;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1)
+    }
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #546341 !important;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05)
+    }
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+.curator-editable {
+    transition: all 0.2s ease;
+    cursor: default;
+}
+body.curator-mode-active .curator-editable {
+    outline: 2px dashed #ac8c52;
+    outline-offset: 4px;
+    cursor: pointer;
+}
+body.curator-mode-active .curator-editable:hover {
+    background-color: rgba(172, 140, 82, 0.1);
+}
+</style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-lowest": "#ffffff",
+                      "on-surface": "#1c1c18",
+                      "on-secondary-fixed-variant": "#3d4b2b",
+                      "outline": "#83746f",
+                      "on-tertiary-container": "#ac8c52",
+                      "inverse-surface": "#31312c",
+                      "on-tertiary": "#ffffff",
+                      "on-surface-variant": "#514440",
+                      "tertiary-fixed": "#ffdea9",
+                      "surface-container": "#f0eee7",
+                      "error": "#ba1a1a",
+                      "surface-tint": "#7c5549",
+                      "on-primary-fixed-variant": "#613e33",
+                      "surface-container-highest": "#e5e2db",
+                      "on-secondary-fixed": "#121f05",
+                      "primary": "#280e06",
+                      "on-primary-fixed": "#2f140b",
+                      "secondary-container": "#d7e9bd",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#5c420f",
+                      "secondary": "#546341",
+                      "surface": "#fcf9f2",
+                      "surface-variant": "#e5e2db",
+                      "tertiary-container": "#392600",
+                      "surface-container-low": "#f6f3ec",
+                      "secondary-fixed": "#d7e9bd",
+                      "on-background": "#1c1c18",
+                      "background": "#fcf9f2",
+                      "surface-container-high": "#ebe8e1",
+                      "surface-bright": "#fcf9f2",
+                      "outline-variant": "#d5c3bd",
+                      "on-primary": "#ffffff",
+                      "secondary-fixed-dim": "#bbcda3",
+                      "on-primary-container": "#b38779",
+                      "primary-container": "#402218",
+                      "primary-fixed": "#ffdbd0",
+                      "tertiary-fixed-dim": "#e6c182",
+                      "on-tertiary-fixed": "#271900",
+                      "on-secondary-container": "#5a6947",
+                      "inverse-primary": "#edbbac",
+                      "on-error": "#ffffff",
+                      "tertiary": "#1f1300",
+                      "primary-fixed-dim": "#edbbac",
+                      "surface-dim": "#dcdad3",
+                      "inverse-on-surface": "#f3f0ea",
+                      "error-container": "#ffdad6",
+                      "on-error-container": "#93000a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "base": "8px",
+                      "container-max": "1200px",
+                      "margin-mobile": "20px",
+                      "margin-desktop": "80px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "body-md": ["Manrope"],
+                      "headline-xl": ["EB Garamond"],
+                      "headline-lg-mobile": ["EB Garamond"],
+                      "label-md": ["Manrope"],
+                      "body-lg": ["Manrope"],
+                      "headline-lg": ["EB Garamond"]
+              },
+              "fontSize": {
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "500"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "32px", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "500"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="paper-texture text-on-surface selection:bg-secondary-container selection:text-on-secondary-container transition-colors duration-300">
+<!-- Top Navigation -->
+<header class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop h-16 z-50 bg-surface border-b border-outline-variant shadow-sm sticky top-0">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer" data-icon="menu">menu</span>
+<h1 class="font-headline-lg-mobile text-primary italic font-medium">The Bookedia</h1>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Home</a>
+<a class="font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Catalog</a>
+<a class="font-label-md text-primary font-bold" href="#">Our Mission</a>
+<a class="font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Profile</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 px-3 py-1.5 border border-outline-variant rounded-full text-on-surface-variant hover:border-secondary hover:text-secondary transition-all" id="curator-toggle">
+<span class="material-symbols-outlined text-[18px]" data-icon="admin_panel_settings">admin_panel_settings</span>
+<span class="font-label-md text-[11px] uppercase tracking-wider hidden sm:block">Curator Mode</span>
+</button>
+<span class="material-symbols-outlined text-primary cursor-pointer" data-icon="search">search</span>
+</div>
+</header>
+<main class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop py-16">
+<!-- Hero Section -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-24 items-center">
+<div class="md:col-span-7">
+<div class="inline-block px-3 py-1 border border-secondary text-secondary font-label-md rounded-full mb-6 uppercase tracking-widest">Est. 1894</div>
+<h2 class="font-headline-xl text-primary mb-8 leading-tight curator-editable" id="edit-hero-title">Preserving the silent voices of the past.</h2>
+<div class="space-y-6 font-body-lg text-on-surface-variant max-w-xl">
+<p class="curator-editable" id="edit-hero-p1">
+                        In a world increasingly tethered to the ephemeral glow of digital screens, <span class="italic font-medium text-primary">The Bookedia</span> stands as a sanctuary for the tactile, the permanent, and the profound. We believe that every foxed page and hand-tooled leather binding is a vessel for history.
+                    </p>
+<p class="curator-editable" id="edit-hero-p2">
+                        Our mission is not merely to sell books, but to act as curators of human thought. From 17th-century theological treatises to the first editions of lost modernist poets, we bridge the gap between private libraries and the modern bibliophile.
+                    </p>
+</div>
+</div>
+<div class="md:col-span-5 relative">
+<div class="aspect-[3/4] rounded-sm overflow-hidden shadow-[0_20px_50px_rgba(64,34,24,0.15)] transform md:rotate-2">
+<img alt="Antique Books" class="w-full h-full object-cover" data-alt="A macro close-up of a stack of antique books with weathered leather spines and gold-leaf lettering. The lighting is soft and directional, as if coming from a nearby library window, highlighting the fine texture of the parchment and the subtle dust motes in the air. The aesthetic is Academic Luxury, with deep mahogany and warm cream tones throughout the composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALp51c5kljJRPepUKBKtHccTrzaeiEdgz-YumL746nGEnMORdlHRO_p9b01bEdhuJxZmNG77OxThxVwL4Qcc_W9p15nMvizKIgfZwXpyJDU-ghaQ8prjhs4I0ptMMP_2Y6_HvwX8bLEjlrr-SNJtrEYvU9ZbOsF32qyh7J74lV1tf4HO-aYMNwGzrMXBaBba6FSRNL0x0-2ugr-zQ54PcMqhppAhiykhM_tTWuhM7Ell6auvMpP-Fj9129tcVXXzczeGjAqSgc-Wv2"/>
+</div>
+<!-- Ex Libris Badge -->
+<div class="absolute -bottom-6 -left-6 w-32 h-32 ex-libris-badge flex flex-col items-center justify-center p-4 text-center rounded-sm transform -rotate-6">
+<span class="font-headline-lg text-primary text-xl leading-none">Ex Libris</span>
+<div class="w-12 h-[1px] bg-primary my-2"></div>
+<span class="font-label-md text-[10px] text-primary uppercase tracking-tighter">Verified Provenance</span>
+</div>
+</div>
+</section>
+<!-- Values Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-24">
+<div class="bookplate-border text-center">
+<span class="material-symbols-outlined text-secondary-fixed-variant text-4xl mb-4" data-icon="history_edu">history_edu</span>
+<h3 class="font-headline-lg text-primary mb-3 curator-editable" id="edit-value-1-title">Authenticity</h3>
+<p class="font-body-md text-on-surface-variant curator-editable" id="edit-value-1-desc">Every volume in our archive undergoes a rigorous authentication process by expert curators.</p>
+</div>
+<div class="bookplate-border text-center">
+<span class="material-symbols-outlined text-secondary-fixed-variant text-4xl mb-4" data-icon="auto_stories">auto_stories</span>
+<h3 class="font-headline-lg text-primary mb-3 curator-editable" id="edit-value-2-title">Curation</h3>
+<p class="font-body-md text-on-surface-variant curator-editable" id="edit-value-2-desc">We seek out works of exceptional craftsmanship, rarity, and historical significance.</p>
+</div>
+<div class="bookplate-border text-center">
+<span class="material-symbols-outlined text-secondary-fixed-variant text-4xl mb-4" data-icon="handshake">handshake</span>
+<h3 class="font-headline-lg text-primary mb-3 curator-editable" id="edit-value-3-title">Community</h3>
+<p class="font-body-md text-on-surface-variant curator-editable" id="edit-value-3-desc">Connecting collectors with the stories that have shaped civilizations across centuries.</p>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start pt-16 border-t border-outline-variant">
+<div>
+<h2 class="font-headline-xl text-primary mb-6">Contact the Curator</h2>
+<p class="font-body-lg text-on-surface-variant mb-12 curator-editable" id="edit-contact-desc">
+                    Whether you are seeking a specific edition or looking to entrust a collection to new hands, our archivists are here to assist.
+                </p>
+<div class="space-y-8">
+<div class="flex items-start gap-6">
+<div class="w-12 h-12 flex items-center justify-center bg-surface-container-high rounded-full">
+<span class="material-symbols-outlined text-primary" data-icon="location_on">location_on</span>
+</div>
+<div>
+<h4 class="font-label-md text-primary uppercase curator-editable" id="edit-address-title">The Archive House</h4>
+<p class="font-body-md text-on-surface-variant curator-editable" id="edit-address-detail">42 Bibliophile Mews, London<br/>WC1E 7HU, United Kingdom</p>
+</div>
+</div>
+<div class="flex items-start gap-6">
+<div class="w-12 h-12 flex items-center justify-center bg-surface-container-high rounded-full">
+<span class="material-symbols-outlined text-primary" data-icon="mail">mail</span>
+</div>
+<div>
+<h4 class="font-label-md text-primary uppercase curator-editable" id="edit-email-title">Direct Inquiry</h4>
+<p class="font-body-md text-on-surface-variant curator-editable" id="edit-email-detail">curator@theantiquarian.com</p>
+</div>
+</div>
+</div>
+<!-- Social Bookplates -->
+<div class="mt-16">
+<h4 class="font-label-md text-primary uppercase mb-6 tracking-widest">Connect with our Library</h4>
+<div class="flex gap-4">
+<a class="w-12 h-16 bookplate-border flex items-center justify-center hover:bg-surface-container transition-colors group" href="#">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary" data-icon="photo_camera">photo_camera</span>
+</a>
+<a class="w-12 h-16 bookplate-border flex items-center justify-center hover:bg-surface-container transition-colors group" href="#">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary" data-icon="ink_pen">ink_pen</span>
+</a>
+<a class="w-12 h-16 bookplate-border flex items-center justify-center hover:bg-surface-container transition-colors group" href="#">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary" data-icon="library_books">library_books</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Form -->
+<div class="bg-surface-container-low p-8 md:p-12 rounded-sm shadow-sm border border-outline-variant">
+<form class="space-y-8" id="inquiry-form" onsubmit="event.preventDefault(); alert('Message sent to the Curator.');">
+<div class="relative">
+<label class="block font-label-md text-on-surface-variant uppercase mb-2">Name</label>
+<input class="w-full bg-transparent border-b-2 border-outline-variant py-3 font-headline-lg text-primary placeholder:text-outline-variant transition-all focus:border-secondary focus:ring-0" placeholder="Your Full Name" type="text"/>
+</div>
+<div class="relative">
+<label class="block font-label-md text-on-surface-variant uppercase mb-2">Email Address</label>
+<input class="w-full bg-transparent border-b-2 border-outline-variant py-3 font-headline-lg text-primary placeholder:text-outline-variant transition-all focus:border-secondary focus:ring-0" placeholder="email@address.com" type="email"/>
+</div>
+<div class="relative">
+<label class="block font-label-md text-on-surface-variant uppercase mb-2">Your Message</label>
+<textarea class="w-full bg-transparent border-b-2 border-outline-variant py-3 font-headline-lg text-primary placeholder:text-outline-variant transition-all focus:border-secondary focus:ring-0 resize-none" placeholder="How may we assist your collection?" rows="4"></textarea>
+</div>
+<button class="w-full py-4 bg-primary text-surface font-label-md uppercase tracking-widest rounded-sm hover:bg-primary-container transition-all active:scale-95 shadow-md flex items-center justify-center gap-2" type="submit">
+                        Send Inquiry
+                        <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer Space for Bottom Nav -->
+<div class="h-24 md:hidden"></div>
+<!-- Bottom Nav Bar (Mobile) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 pb-safe bg-surface-container-low border-t border-outline-variant shadow-[0_-2px_10px_rgba(64,34,24,0.08)] rounded-t-xl md:hidden">
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1">
+<span class="material-symbols-outlined" data-icon="home_app_logo">home_app_logo</span>
+<span class="font-label-md text-xs mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-label-md text-xs mt-1">Catalog</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+<span class="font-label-md text-xs mt-1">Sell</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span class="font-label-md text-xs mt-1">Profile</span>
+</div>
+</nav>
+<!-- Curator Notification -->
+<div class="fixed top-20 right-4 z-[60] bg-primary text-surface px-4 py-2 rounded-sm shadow-xl font-label-md text-xs uppercase tracking-widest hidden flex items-center gap-2 border border-secondary" id="curator-banner">
+<span class="material-symbols-outlined text-sm" data-icon="info">info</span>
+Click elements to update records
+</div>
+<script>
+        // Micro-interaction for the form fields
+        const inputs = document.querySelectorAll('input, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                const label = input.parentElement.querySelector('label');
+                if(label) label.classList.add('text-secondary');
+            });
+            input.addEventListener('blur', () => {
+                const label = input.parentElement.querySelector('label');
+                if(label) label.classList.remove('text-secondary');
+            });
+        });
+
+        // Curator Mode Framework
+        const curatorToggle = document.getElementById('curator-toggle');
+        const curatorBanner = document.getElementById('curator-banner');
+        const body = document.body;
+        let isCuratorMode = false;
+
+        curatorToggle.addEventListener('click', () => {
+            isCuratorMode = !isCuratorMode;
+            
+            if (isCuratorMode) {
+                body.classList.add('curator-mode-active');
+                curatorBanner.classList.remove('hidden');
+                curatorToggle.classList.add('bg-secondary-container', 'text-on-secondary-container', 'border-secondary');
+                curatorToggle.querySelector('.material-symbols-outlined').textContent = 'verified_user';
+            } else {
+                body.classList.remove('curator-mode-active');
+                curatorBanner.classList.add('hidden');
+                curatorToggle.classList.remove('bg-secondary-container', 'text-on-secondary-container', 'border-secondary');
+                curatorToggle.querySelector('.material-symbols-outlined').textContent = 'admin_panel_settings';
+            }
+        });
+
+        // Handle Curator Edits
+        document.querySelectorAll('.curator-editable').forEach(element => {
+            element.addEventListener('click', (e) => {
+                if (!isCuratorMode) return;
+                
+                e.preventDefault();
+                const currentText = element.innerText;
+                const newText = prompt(`Update Record [${element.id}]:`, currentText);
+                
+                if (newText !== null && newText !== currentText) {
+                    element.innerHTML = newText.replace(/\n/g, '<br/>');
+                    // In a real app, this would trigger an API call to save to {{DATA:DESIGN_SYSTEM:DESIGN_SYSTEM_1}} storage
+                    console.log(`Curator updated ${element.id} to: ${newText}`);
+                    
+                    // Simple visual feedback
+                    element.classList.add('text-secondary');
+                    setTimeout(() => element.classList.remove('text-secondary'), 1000);
+                }
+            });
+        });
+    </script>
+</body></html>

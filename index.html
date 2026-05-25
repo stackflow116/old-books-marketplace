@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Bookedia</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/assets/CSS/home.css" />
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo-group">
+      <span title="Menu" class="material-symbols-outlined menu-icon">menu</span>
+      <h1 class="logo">The Bookedia</h1>
+    </div>
+
+    <nav class="desktop-nav">
+      <a  href="/index.html">Home</a>
+      <a href="/pages/admin.html">Dashboard</a>
+      <a href="/pages/buy-books.html">Buy Books</a>
+      <a href="/pages/sell-books.html">Sell Books</a>
+      <a href="/pages/book-detail.html">Catalog</a>
+      <a href="/pages/about.html">About Us</a>
+
+      <div class="curator-toggle-wrapper">
+        <span>Curator</span>
+
+        <button id="curator-toggle" class="toggle-btn">
+          <span id="toggle-dot" class="toggle-dot"></span>
+        </button>
+      </div>
+    </nav>
+
+    <div class="header-icons">
+      <span title="Search" class="material-symbols-outlined" hover="Search">search</span>
+      <span title="Cart" class="material-symbols-outlined" hover="Cart" >shopping_bag</span>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <span class="hero-label">Est. 1892</span>
+
+      <h2>Curating the World's Lost Chapters</h2>
+
+      <div class="search-box">
+        <span class="material-symbols-outlined">search</span>
+
+        <input type="text"placeholder="Search by title, author, or era..."/>
+
+        <button>Search</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED BOOKS -->
+  <section class="featured-section" id="featured-section">
+
+    <div class="section-heading">
+      <div>
+        <h3>Featured Rare Finds</h3>
+        <p>Authenticated first editions and historical treasures.</p>
+      </div>
+
+      <a href="/pages/book-detail.html">View Full Catalog</a>
+    </div>
+
+    <div class="books-container" id="book-grid">
+
+      <!-- BOOK CARD -->
+      <div class="book-card">
+
+        <div class="book-image-wrapper">
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrI8KxJhaCG5x8xZucRNTpN3SNhowmgs1OOhivKS5q4bpzDowuVdBzDCGTt-a1c1HU3uYdsxGBX8XyHNqScf5HPiIcY3LDFsW3xqGddti_xHQPp7z8qFGEFJozo-Y7YC6x4XjmVNSOG8EAd4tFyMfeoSYkXSab_PSHvk13oNxqUbip4uO6e1YCRvM-vMJXjRNrMqMqM4ukuLVAezpJX8tzd87sUGMDZLOK3OTW2fQoNggsZBXTsTAqwEdthiZMC7bJIM4Wn7vVvTkJ"
+            alt="Book"
+          />
+
+          <span class="badge">EX LIBRIS</span>
+
+          <div class="curator-controls">
+            <button class="edit-btn">
+              <span class="material-symbols-outlined">edit</span>
+            </button>
+
+            <button class="delete-btn">
+              <span class="material-symbols-outlined">delete</span>
+            </button>
+          </div>
+        </div>
+
+        <h4>The Alchemist's Ledger</h4>
+
+        <p class="book-info">Circa 1745 • London</p>
+
+        <div class="book-footer">
+          <span class="price-tag">$4,250</span>
+
+          <button class="bookmark-btn">
+            <span class="material-symbols-outlined">bookmark</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- BOOK CARD -->
+      <div class="book-card">
+
+        <div class="book-image-wrapper">
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbQJ2ARfjSDOwCCbT0yFovFGJiSoMI9TQoz_euvvNhAc7iDoYMEdSDBISE5TwGbDlo_QF5SmOy282bcDFeRdszl5RdtEQjC-nHEl4jGCAYBPoe0i1wJU9xZ06hKlEYnZdNeJVSrJ_UzVHahS25Ed9rL3MIQxO0PRSjoZB5IzS8FaJxM0uEOb6csM9yK8pY82tagJ4by8KqhZFVLCOf4nPsq7PUppXrM_Slx8CbiO1x9iPCJmynwfm7SZPc_hxX36nxY_DnZLVC7mTY"
+            alt="Book"
+          />
+
+          <div class="curator-controls">
+            <button class="edit-btn">
+              <span class="material-symbols-outlined">edit</span>
+            </button>
+
+            <button class="delete-btn">
+              <span class="material-symbols-outlined">delete</span>
+            </button>
+          </div>
+        </div>
+
+        <h4>Nocturnal Voyages</h4>
+
+        <p class="book-info">1912 • First Edition</p>
+
+        <div class="book-footer">
+          <span class="price-tag">$890</span>
+
+          <button class="bookmark-btn">
+            <span class="material-symbols-outlined">bookmark</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- BOOK CARD -->
+      <div class="book-card">
+
+        <div class="book-image-wrapper">
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9s4qAz3XO33P_h_GNMoLFuThqAbBZgH7mDCyrnXtUioWEGnVDmDrgSzdj3blvmc3a6e4KccIwpZUglEIY3cIlbQti52UibJ4ObbUOqbFi_JMlTbhxWA04uwuFuD3feTU22ZLuYlQpdBAuw8GS7PJQYp9bvv-1SrJSQtk7pmYb48279Aym6FoIi6qYxA25k1SfM9vxHDQkDOukBKuLRcL-nkZMhQ5UlrPDv8M2ncGQOWecGngsuS37SquMrvVMS_I9xc59c1mVrvc8"
+            alt="Book"
+          />
+
+          <span class="badge mint">MINT CONDITION</span>
+
+          <div class="curator-controls">
+            <button class="edit-btn">
+              <span class="material-symbols-outlined">edit</span>
+            </button>
+
+            <button class="delete-btn">
+              <span class="material-symbols-outlined">delete</span>
+            </button>
+          </div>
+        </div>
+
+        <h4>Archival Journals (Lot 4)</h4>
+
+        <p class="book-info">Hand-bound • 1860s</p>
+
+        <div class="book-footer">
+          <span class="price-tag">$1,200</span>
+
+          <button class="bookmark-btn">
+            <span class="material-symbols-outlined">bookmark</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="/assets/JS/app.js"></script>
+</body>
+</html>

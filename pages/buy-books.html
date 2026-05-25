@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>The Bookedia | Buy Books</title>
+
+  <!-- Material Symbols -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" crossorigin href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Manrope:wght@200..800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <link rel="stylesheet" href="/assets/CSS/buy.css" />
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-container-lowest": "#ffffff",
+            "on-surface": "#1c1c18",
+            "on-secondary-fixed-variant": "#3d4b2b",
+            outline: "#83746f",
+            "on-tertiary-container": "#ac8c52",
+            "inverse-surface": "#31312c",
+            "on-tertiary": "#ffffff",
+            "on-surface-variant": "#514440",
+            "tertiary-fixed": "#ffdea9",
+            "surface-container": "#f0eee7",
+            error: "#ba1a1a",
+            "surface-tint": "#7c5549",
+            "on-primary-fixed-variant": "#613e33",
+            "surface-container-highest": "#e5e2db",
+            "on-secondary-fixed": "#121f05",
+            primary: "#280e06",
+            "on-primary-fixed": "#2f140b",
+            "secondary-container": "#d7e9bd",
+            "on-secondary": "#ffffff",
+            "on-tertiary-fixed-variant": "#5c420f",
+            secondary: "#546341",
+            surface: "#fcf9f2",
+            "surface-variant": "#e5e2db",
+            "tertiary-container": "#392600",
+            "surface-container-low": "#f6f3ec",
+            "secondary-fixed": "#d7e9bd",
+            "on-background": "#1c1c18",
+            background: "#fcf9f2",
+            "surface-container-high": "#ebe8e1",
+            "surface-bright": "#fcf9f2",
+            "outline-variant": "#d5c3bd",
+            "on-primary": "#ffffff",
+            "secondary-fixed-dim": "#bbcda3",
+            "on-primary-container": "#b38779",
+            "primary-container": "#402218",
+            "primary-fixed": "#ffdbd0",
+            "tertiary-fixed-dim": "#e6c182",
+            "on-tertiary-fixed": "#271900",
+            "on-secondary-container": "#5a6947",
+            "inverse-primary": "#edbbac",
+            "on-error": "#ffffff",
+            tertiary: "#1f1300",
+            "primary-fixed-dim": "#edbbac",
+            "surface-dim": "#dcdad3",
+            "inverse-on-surface": "#f3f0ea",
+            "error-container": "#ffdad6",
+            "on-error-container": "#93000a"
+          },
+
+          borderRadius: {
+            DEFAULT: "0.125rem",
+            lg: "0.25rem",
+            xl: "0.5rem",
+            full: "0.75rem"
+          },
+
+          spacing: {
+            "base": "8px",
+            "container-max": "1200px",
+            "margin-mobile": "20px",
+            "margin-desktop": "80px",
+            "gutter": "24px"
+          },
+
+          fontFamily: {
+            "body-md": ["Manrope"],
+            "headline-xl": ["EB Garamond"],
+            "headline-lg-mobile": ["EB Garamond"],
+            "label-md": ["Manrope"],
+            "body-lg": ["Manrope"],
+            "headline-lg": ["EB Garamond"]
+          },
+
+          fontSize: {
+            "body-md": [
+              "16px",
+              {
+                lineHeight: "24px",
+                fontWeight: "400"
+              }
+            ],
+
+            "headline-xl": [
+              "48px",
+              {
+                lineHeight: "56px",
+                letterSpacing: "-0.02em",
+                fontWeight: "600"
+              }
+            ],
+
+            "headline-lg-mobile": [
+              "28px",
+              {
+                lineHeight: "36px",
+                fontWeight: "500"
+              }
+            ],
+
+            "label-md": [
+              "14px",
+              {
+                lineHeight: "20px",
+                letterSpacing: "0.05em",
+                fontWeight: "600"
+              }
+            ],
+
+            "body-lg": [
+              "18px",
+              {
+                lineHeight: "32px",
+                fontWeight: "400"
+              }
+            ],
+
+            "headline-lg": [
+              "32px",
+              {
+                lineHeight: "40px",
+                fontWeight: "500"
+              }
+            ]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+
+<body class="bg-background text-on-surface parchment-texture min-h-screen font-body-md">
+
+  <!-- Header -->
+  <header
+    class="bg-surface flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop h-16 border-b border-outline-variant shadow-sm sticky top-0 z-50"
+  >
+    <div class="flex items-center gap-4">
+      <button class="text-primary hover:bg-surface-container-high transition-colors p-2 rounded-full">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+
+      <h1 class="font-headline-lg-mobile text-primary italic">
+        The Bookedia
+      </h1>
+    </div>
+
+    <nav class="hidden md:flex gap-6">
+      <a class="text-on-surface-variant hover:text-primary transition-colors" href="/index.html">Home</a>
+
+      <a class="text-on-surface-variant hover:text-primary transition-colors" href="/admin.html">Dashboard</a>
+      <a class="text-primary font-bold border-b-2 border-primary" href="/pages/buy-books.html">Buy Books</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors" href="/pages/buy-books.html">Buy Books</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors" href="/pages/sell-books.html">Sell Books</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors" href="/pages/book-detail.html">Catalog</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors" href="/pages/about.html">About Us</a>
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <button class="text-primary hover:bg-surface-container-high transition-colors p-2 rounded-full">
+        <span title="Search" class="material-symbols-outlined">search</span>
+      </button>
+
+      <button class="text-primary hover:bg-surface-container-high transition-colors p-2 rounded-full relative">
+        <span  title="Shopping Cart" class="material-symbols-outlined">shopping_bag</span>
+
+        <span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full"></span>
+      </button>
+    </div>
+  </header>
+
+  <main
+    class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop py-12 pb-32"
+    id="catalog-container"
+  >
+
+    <!-- Hero -->
+    <section class="mb-12 text-center">
+      <h2 class="font-headline-xl text-headline-xl text-primary mb-2">
+        Curated Archives
+      </h2>
+
+      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+        Discover a world of rare manuscripts, first editions, and historical treasures preserved through time.
+      </p>
+    </section>
+
+    <!-- Filters -->
+    <section
+      class="mb-12 bg-surface-container-low p-4 rounded-xl border border-outline-variant shadow-sm flex flex-col md:flex-row justify-between items-center gap-6"
+    >
+
+      <div class="flex flex-wrap gap-3 justify-center md:justify-start">
+        <button class="genre-btn active-genre">
+          All Genres
+        </button>
+
+        <button class="genre-btn">
+          Classic Literature
+        </button>
+
+        <button class="genre-btn">
+          History
+        </button>
+
+        <button class="genre-btn">
+          First Editions
+        </button>
+      </div>
+
+      <div class="flex items-center gap-4 w-full md:w-auto">
+
+        <button
+          class="flex items-center gap-2 px-4 py-2 border border-outline text-on-surface-variant rounded-lg font-label-md hover:bg-surface-container-high transition-all"
+          id="curator-toggle"
+        >
+          <span class="material-symbols-outlined text-[20px]">
+            admin_panel_settings
+          </span>
+
+          <span>Curator Mode</span>
+        </button>
+
+        <div class="relative flex-grow md:flex-grow-0">
+          <span
+            class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant"
+          >
+            sort
+          </span>
+
+          <select
+            class="pl-10 pr-8 py-2 bg-surface-container-lowest border border-outline-variant rounded-lg appearance-none w-full"
+          >
+            <option>Recently Added</option>
+            <option>Price: Low to High</option>
+            <option>Price: High to Low</option>
+            <option>Condition</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- Book Grid -->
+    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter" id="book-grid">
+
+      <!-- Book Card -->
+      <article class="book-card group" data-id="1">
+
+        <div class="relative h-80 overflow-hidden bg-surface-container-highest">
+
+          <img
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmaqhqjtxkuYQUZir4PoYNOowXwlEeuhJ93yMHl8S-V9X39kawshi4Pm85JarJUdJjoqYKuKjL--6V2xUXtOKra3Xtak0vmU7dZDETyL809vjGBIAJPS-3aq-BEscGyHv5FM8QPy6p7wenGohmM1rD0lONuIiq5sC4b-P1J5m4e8473o_xBWbJAMTH-REYjFfopt3Th-g7VDxRAWHYc-tg2IP3__2IxIKDbPmAc1-RVj4g6MkytdjwAO-T3lJtXRfHHxgyqacdsFEN"
+            alt="Book cover"
+          />
+
+          <div class="absolute top-4 right-4">
+            <div class="ex-libris-badge px-3 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-on-tertiary-fixed shadow-md">
+              Ex Libris
+            </div>
+          </div>
+
+          <div class="curator-controls absolute inset-0">
+            <button class="edit-price-btn action-btn">
+              <span class="material-symbols-outlined">edit</span>
+            </button>
+
+            <button class="remove-book-btn delete-btn">
+              <span class="material-symbols-outlined">delete</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="p-6 flex flex-col flex-grow">
+
+          <div class="flex justify-between items-start mb-2">
+
+            <span class="book-condition">
+              Fine
+            </span>
+
+            <span class="book-price font-headline-lg text-primary" data-raw-price="450.00">
+              $450.00
+            </span>
+          </div>
+
+          <h3 class="font-headline-lg text-headline-lg text-primary leading-tight mb-1 group-hover:text-surface-tint transition-colors">
+            The Alchemist's Ledger
+          </h3>
+
+          <p class="font-body-md text-on-surface-variant italic mb-4">
+            A.G. Thornton, 1892
+          </p>
+
+          <div class="mt-auto pt-4 border-t border-outline-variant flex justify-between items-center">
+
+            <span class="text-label-md font-label-md text-on-surface-variant flex items-center gap-1">
+              <span class="material-symbols-outlined text-[18px]">
+                menu_book
+              </span>
+
+              First Edition
+            </span>
+
+            <button class="cart-btn">
+              <span class="material-symbols-outlined">
+                add_shopping_cart
+              </span>
+            </button>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- Pagination -->
+    <nav class="mt-16 flex justify-center items-center gap-4">
+
+      <button class="pagination-btn">
+        <span class="material-symbols-outlined">
+          chevron_left
+        </span>
+      </button>
+
+      <div class="flex items-center gap-2">
+        <button class="page-number active-page">1</button>
+        <button class="page-number">2</button>
+        <button class="page-number">3</button>
+        <span class="px-2 text-outline">...</span>
+        <button class="page-number">12</button>
+      </div>
+
+      <button class="pagination-btn">
+        <span class="material-symbols-outlined">
+          chevron_right
+        </span>
+      </button>
+    </nav>
+  </main>
+
+  <!-- Mobile Bottom Nav -->
+  <nav
+    class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 bg-surface-container-low border-t border-outline-variant shadow-[0_-2px_10px_rgba(64,34,24,0.08)] md:hidden rounded-t-xl"
+  >
+
+    <a class="mobile-nav-link" href="#">
+      <span class="material-symbols-outlined">home_app_logo</span>
+      <span>Home</span>
+    </a>
+
+    <a class="mobile-nav-link active-mobile-link" href="#">
+      <span class="material-symbols-outlined">auto_stories</span>
+      <span>Catalog</span>
+    </a>
+
+    <a class="mobile-nav-link" href="#">
+      <span class="material-symbols-outlined">add_circle</span>
+      <span>Sell</span>
+    </a>
+
+    <a class="mobile-nav-link" href="#">
+      <span class="material-symbols-outlined">account_circle</span>
+      <span>Profile</span>
+    </a>
+  </nav>
+
+  <script src="/assets/JS/buy.js"></script>
+</body>
+</html>

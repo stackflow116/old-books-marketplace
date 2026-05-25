@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Bookedia - Sell Your Collection</title>
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Manrope:wght@200..800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="/assets/CSS/sell.css" />
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            surface: "#fcf9f2",
+            primary: "#280e06",
+            secondary: "#546341",
+            outline: "#83746f",
+            outlineVariant: "#d5c3bd",
+            surfaceContainer: "#f0eee7",
+            surfaceContainerLow: "#f6f3ec",
+            surfaceContainerHigh: "#ebe8e1",
+            surfaceContainerHighest: "#e5e2db",
+            secondaryContainer: "#d7e9bd",
+            primaryContainer: "#402218",
+            onPrimary: "#ffffff",
+            onSurface: "#1c1c18",
+            onSurfaceVariant: "#514440",
+            onSecondaryContainer: "#5a6947",
+            error: "#ba1a1a"
+          },
+          fontFamily: {
+            body: ["Manrope"],
+            headline: ["EB Garamond"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+
+<body class="font-body text-onSurface overflow-x-hidden">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="flex items-center gap-4">
+      <span class="material-symbols-outlined text-primary cursor-pointer">
+        menu
+      </span>
+
+      <span class="logo">
+        The Bookedia
+      </span>
+    </div>
+
+    <nav class="desktop-nav">
+          <a  href="/index.html">Home</a>
+      <a href="/pages/admin.html">Dashboard</a>
+      <a href="/pages/buy-books.html">Buy Books</a>
+      <a class="active-link" href="/pages/sell-books.html">Sell Books</a>
+      <a href="/pages/book-detail.html">Catalog</a>
+      <a href="/pages/about.html">About Us</a>
+    </nav>
+
+    <div class="flex items-center gap-4">
+      <span class="material-symbols-outlined text-primary">
+        search
+      </span>
+
+      <span class="material-symbols-outlined text-primary hidden md:block">
+        account_circle
+      </span>
+    </div>
+  </header>
+
+  <main class="main-wrapper">
+
+    <!-- Hero -->
+    <section class="hero">
+      <h1 class="hero-title">
+        Pass on the Legacy
+      </h1>
+
+      <p class="hero-text">
+        Our curators assist in finding new homes for significant works.
+        List your rare finds and cherished volumes within our global archive.
+      </p>
+    </section>
+
+    <!-- Curator Toggle -->
+    <div class="toggle-row">
+      <span class="toggle-label">Curator Mode</span>
+
+      <button id="curator-toggle" class="toggle-btn">
+        <span id="curator-toggle-dot" class="toggle-dot"></span>
+      </button>
+    </div>
+
+    <!-- Stepper -->
+    <div class="stepper">
+
+      <div class="step-line"></div>
+
+      <div class="step-box">
+        <div class="step-indicator active" id="step-1-indicator">1</div>
+        <span class="step-label active-label">Identification</span>
+      </div>
+
+      <div class="step-box">
+        <div class="step-indicator" id="step-2-indicator">2</div>
+        <span class="step-label">Provenance</span>
+      </div>
+
+      <div class="step-box">
+        <div class="step-indicator" id="step-3-indicator">3</div>
+        <span class="step-label">Evaluation</span>
+      </div>
+
+    </div>
+
+    <!-- Content -->
+    <div class="content-grid">
+
+      <!-- Form -->
+      <section class="form-wrapper">
+
+        <form id="sell-book-form">
+
+          <!-- Step 1 -->
+          <div id="step-1" class="form-step">
+
+            <div class="step-heading">
+              <span class="material-symbols-outlined text-primary">
+                auto_stories
+              </span>
+
+              <h2>Identify the Work</h2>
+            </div>
+
+            <div class="space-y-6">
+
+              <div>
+                <label class="input-label">
+                  ISBN
+                  <span class="error-text hidden" id="isbn-error">
+                    Required
+                  </span>
+                </label>
+
+                <input
+                  id="input-isbn"
+                  type="text"
+                  class="text-input"
+                  placeholder="e.g. 978-3-16-148410-0"
+                />
+              </div>
+
+              <div>
+                <label class="input-label">Book Title</label>
+
+                <input
+                  id="input-title"
+                  type="text"
+                  class="text-input"
+                  placeholder="The Name of the Rose"
+                />
+              </div>
+
+              <div>
+                <label class="input-label">Author(s)</label>
+
+                <input
+                  id="input-author"
+                  type="text"
+                  class="text-input"
+                  placeholder="Umberto Eco"
+                />
+              </div>
+
+            </div>
+
+            <div class="button-row-end">
+              <button
+                type="button"
+                class="primary-btn"
+                onclick="validateAndGo(2)"
+              >
+                Next: Photos
+              </button>
+            </div>
+
+          </div>
+
+          <!-- Step 2 -->
+          <div id="step-2" class="form-step hidden">
+
+            <div class="step-heading">
+              <span class="material-symbols-outlined text-primary">
+                history_edu
+              </span>
+
+              <h2>Condition & Visuals</h2>
+            </div>
+
+            <div class="space-y-8">
+
+              <div>
+
+                <label class="input-label mb-4 block">
+                  Visual Documentation
+                </label>
+
+                <div class="upload-grid">
+
+                  <div
+                    class="upload-box"
+                    onclick="simulateUpload(this, 'Cover')"
+                  >
+                    <span class="material-symbols-outlined">
+                      add_a_photo
+                    </span>
+
+                    <span class="upload-label">
+                      Cover Photo
+                    </span>
+                  </div>
+
+                  <div
+                    class="upload-box"
+                    onclick="simulateUpload(this, 'Spine')"
+                  >
+                    <span class="material-symbols-outlined">
+                      add_a_photo
+                    </span>
+
+                    <span class="upload-label">
+                      Spine / Interior
+                    </span>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div>
+
+                <label class="input-label mb-4 block">
+                  Bibliographical Condition
+                </label>
+
+                <div class="condition-grid" id="condition-selector">
+
+                  <button type="button" class="condition-btn active-condition">
+                    Near Fine
+                  </button>
+
+                  <button type="button" class="condition-btn">
+                    Fine
+                  </button>
+
+                  <button type="button" class="condition-btn">
+                    Very Good
+                  </button>
+
+                  <button type="button" class="condition-btn">
+                    Good
+                  </button>
+
+                </div>
+
+              </div>
+
+              <div>
+
+                <label class="input-label">
+                  Provenance Notes
+                </label>
+
+                <textarea
+                  class="text-input"
+                  rows="3"
+                  placeholder="Previous owners, inscriptions..."
+                ></textarea>
+
+              </div>
+
+            </div>
+
+            <div class="button-between">
+              <button
+                type="button"
+                class="secondary-btn"
+                onclick="goToStep(1)"
+              >
+                Back
+              </button>
+
+              <button
+                type="button"
+                class="primary-btn"
+                onclick="goToStep(3)"
+              >
+                Next: Valuation
+              </button>
+            </div>
+
+          </div>
+
+          <!-- Step 3 -->
+          <div id="step-3" class="form-step hidden">
+
+            <div class="step-heading">
+              <span class="material-symbols-outlined text-primary">
+                payments
+              </span>
+
+              <h2>Final Appraisal</h2>
+            </div>
+
+            <div class="price-card">
+
+              <label class="input-label block mb-4">
+                Set Your Asking Price
+              </label>
+
+              <div class="price-input-wrapper">
+
+                <span class="currency-symbol">$</span>
+
+                <input
+                  id="price-input"
+                  type="number"
+                  class="price-input"
+                  placeholder="0.00"
+                />
+
+              </div>
+
+            </div>
+
+            <div class="button-between">
+
+              <button
+                type="button"
+                class="secondary-btn"
+                onclick="goToStep(2)"
+              >
+                Back
+              </button>
+
+              <button type="submit" class="primary-btn">
+                Submit Listing
+              </button>
+
+            </div>
+
+          </div>
+
+        </form>
+
+      </section>
+
+      <!-- Preview -->
+      <aside class="preview-wrapper">
+
+        <div class="preview-header">
+          <span class="material-symbols-outlined text-sm">
+            visibility
+          </span>
+
+          Live Preview
+        </div>
+
+        <div class="preview-card">
+
+          <div class="preview-image" id="preview-image-container">
+            <span
+              class="material-symbols-outlined text-4xl text-outline"
+            >
+              menu_book
+            </span>
+          </div>
+
+          <h3 id="preview-title" class="preview-title">
+            Book Title
+          </h3>
+
+          <p id="preview-author" class="preview-author">
+            Author Name
+          </p>
+
+          <div class="preview-footer">
+
+            <div>
+              <p class="preview-label">
+                Estimated Value
+              </p>
+
+              <p id="preview-price" class="preview-price">
+                $0.00
+              </p>
+            </div>
+
+            <div class="stamp-box">
+              <span class="material-symbols-outlined">
+                history_edu
+              </span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </aside>
+
+    </div>
+
+  </main>
+
+  <script src="/assets/JS/sell.js"></script>
+</body>
+</html>

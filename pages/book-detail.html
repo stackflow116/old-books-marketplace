@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Book Detail | The Bookedia</title>
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Manrope:wght@200..800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="/assets/CSS/detail.css" />
+</head>
+
+<body class="bg-surface text-on-surface font-body-md paper-texture">
+
+  <!-- Notification -->
+  <div id="status-notification" class="notification hidden">
+    <span class="material-symbols-outlined">check_circle</span>
+
+    <span id="status-message">
+      Changes saved successfully
+    </span>
+  </div>
+
+  <!-- Header -->
+  <header class="topbar">
+
+    <div class="flex items-center gap-4">
+      <button class="icon-btn">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+
+      <h1 class="brand-logo">
+        The Bookedia
+      </h1>
+    </div>
+
+    <div class="flex items-center gap-3">
+
+      <div class="curator-badge hidden md:flex">
+        <span class="material-symbols-outlined text-[18px]">
+          verified
+        </span>
+
+        Curator Access
+      </div>
+
+      <button class="icon-btn">
+        <span class="material-symbols-outlined">search</span>
+      </button>
+
+    </div>
+
+  </header>
+
+  <main id="main-content" class="main-wrapper">
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+
+      <span>Catalog</span>
+
+      <span class="material-symbols-outlined text-[16px]">
+        chevron_right
+      </span>
+
+      <span>Occult & Science</span>
+
+      <span class="material-symbols-outlined text-[16px]">
+        chevron_right
+      </span>
+
+      <span class="active-crumb">
+        The Alchemist's Ledger
+      </span>
+
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero-grid">
+
+      <!-- Gallery -->
+      <div class="gallery-section">
+
+        <div class="main-image-box">
+
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7uyO80bI6-9Rz802P2chDYqX_JoKHpJG3dniLdGd-rdGycK2lilkv4qJEqb4HAmnFxgnzsrJhMUBOH6ndeexi1nuPyZbVUXBGvyGZY_Mr34JpHLb7v0lpIgPNNk2MkoiDrATChQMLdvRY_gw7UQNP8rgt4Kd2BUv1NpgKnX5I1qP7mmuws8gmFnZFcARsfwwugDPyK2RvNIZfDUfv_YPHDkm-1GUaRxYxx4YlExoi2w7mRxH3JmrAldduxiZp5h9GbP89ObSvJdbl"
+            alt="The Alchemist's Ledger"
+            class="main-book-image"
+          />
+
+        </div>
+
+        <div class="thumbnail-grid">
+
+          <div class="thumb">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdK6Rc9MRqGWl1-eRsTJcjqRHv5TBo9WDURQ_R3VvsQMetsURzR9v0CDvz_7Bx8v1FvuCx-3TKqLS_C1DlKlZWzGyFvOLC5_zYm1qq9NtkuegqokaG1xwzmyvvR4UjiaxcRQeaXfyJbQd9lC7BMIE_IxzCzsg-IFZ9eXciHVP5A5jdnTL9B3jt12l0PMa9F4WRBkjN7zcC1xmkQOykj0CYRdCOgBdRQWeWXPZqlgVR1mOYmnPI-g9EWioQeJmF-kD86VUiqNj8KUOh" alt="" />
+          </div>
+
+          <div class="thumb">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBf6uOISY31xoX4B8KsEz74pR9nHCg5uwHh6UmjQkv1y7cAhPihqeTlCLI5XPYjgw3ebS50o9WHv-kCTTdS7EVFHpSNwodzxxrB7CCeau9ni9MYnQnbWZHuqFUKZVn6W0E4KEUzLJr0fwYpGKSzyt4AFP0CgllSDX4kWK5_fq3Js8UjDfbxI8WcZmVokKr7OUrbH6U5B72EV0UMGl21BZMv-Hp6yMwzwMjv0xXgqRiH-0O0zVmLCq8zcxUHEAo_XSXzoql7zjt1uk-I" alt="" />
+          </div>
+
+          <div class="thumb">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZN4DUqphMNfp8R5b2aNz4hEoK2-158UXjUKmC5LqlijGP1ssAQO70wU65hKv4MzSK1M9IrJaaXF23sq0rLlMQLVZLY-pF_GG4ZV9QLaleaNzV5bUAwVaHZ5ClQez8zCYRQIuRr6qKxqyf7sYdJiqeyTX-IqnjcESg_DdyK_w0if9YynpWUz7iWvm9uxR3la6ipENFgjOwHGWNvx8FCC6MN7C5x2e46xfC1hRkXEW1WhqB2urke0gMxIEH3S1avJKNdOOtQZeXk0V6" alt="" />
+          </div>
+
+          <div class="thumb">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0kb0fzcXgF6X-8uY9JVQefKXxR0Tq31Uzl71mwLKdznfnivsFgHEHe1ll8VmCSww7VQYV_rDPvNojNz_Y6yIIQFF2hQKPXbVb0tC8M8ZjO4zetj2RnglBCyHdl9ZER-D1UVp6TkyzZ42CjRmH71KZakyAgbUBZbBE81EiWkUgonsPDo5AE03BeMDA-2P2OQEOsDINS4iutHxhNcqG7ddM3iMnWLMXfR61fksKael65yFz2hsJNF-6zlpdAwNCoLs8FDO8fUTI0M7L" alt="" />
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Info -->
+      <div class="info-section">
+
+        <div>
+
+          <div class="tag-row">
+
+            <div class="flex items-center gap-2 flex-wrap">
+
+              <span class="rare-tag">
+                Verified Rare
+              </span>
+
+              <span class="condition-tag">
+                Fine Condition
+              </span>
+
+            </div>
+
+            <button id="edit-record-btn" class="edit-btn">
+
+              <span class="material-symbols-outlined text-[18px]">
+                edit_note
+              </span>
+
+              Edit Record
+
+            </button>
+
+          </div>
+
+          <h2 class="book-title">
+            The Alchemist's Ledger
+          </h2>
+
+          <p class="book-author">
+            Attributed to Nicolas Flamel, c. 1642
+          </p>
+
+        </div>
+
+        <div class="price-box">
+
+          <span id="price-display" class="price-text">
+            $14,500.00
+          </span>
+
+          <span class="shipping-text">
+            Includes insured global courier shipping
+          </span>
+
+        </div>
+
+        <!-- Curator Panel -->
+        <div id="curator-panel" class="curator-panel hidden">
+
+          <h4 class="panel-heading">
+
+            <span class="material-symbols-outlined">
+              settings
+            </span>
+
+            Management Features
+
+          </h4>
+
+          <div class="space-y-4">
+
+            <div>
+
+              <label class="panel-label">
+                Adjust Listing Price
+              </label>
+
+              <input
+                id="price-input"
+                type="text"
+                value="$14,500.00"
+                class="panel-input"
+              />
+
+            </div>
+
+            <div class="panel-actions">
+
+              <button id="save-record-btn" class="primary-action">
+                Save Changes
+              </button>
+
+              <button id="cancel-edit-btn" class="secondary-action">
+                Cancel
+              </button>
+
+            </div>
+
+            <div class="retire-box">
+
+              <button id="retire-record-btn" class="retire-btn">
+
+                <span class="material-symbols-outlined">
+                  delete_forever
+                </span>
+
+                Retire from Archive
+
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Actions -->
+        <div id="standard-actions" class="action-stack">
+
+          <button class="collection-btn">
+            Add to Private Collection
+          </button>
+
+          <button id="wishlist-btn" class="wishlist-btn">
+
+            <span class="material-symbols-outlined">
+              bookmark
+            </span>
+
+            Save to Wishlist
+
+          </button>
+
+        </div>
+
+        <!-- Curator Note -->
+        <div class="note-box">
+
+          <h4 class="note-heading">
+
+            <span class="material-symbols-outlined text-[18px]">
+              verified_user
+            </span>
+
+            Curator's Note
+
+          </h4>
+
+          <p id="curator-note-text" class="note-text">
+
+            A remarkable specimen of late-Renaissance occultism.
+            This ledger contains marginalia in three distinct hands,
+            suggesting its use through various 17th-century circles.
+
+          </p>
+
+          <div id="note-edit-indicator" class="note-edit hidden">
+            EDITING MODE
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Delete Modal -->
+  <div id="delete-overlay" class="delete-overlay hidden">
+
+    <div class="delete-modal">
+
+      <h3 class="modal-title">
+        Archive Retirement
+      </h3>
+
+      <p class="modal-text">
+
+        Are you certain you wish to retire
+        <strong>The Alchemist's Ledger</strong>
+        from the active collection?
+
+      </p>
+
+      <div class="modal-actions">
+
+        <button id="confirm-delete-btn" class="confirm-btn">
+          Confirm Retirement
+        </button>
+
+        <button id="cancel-delete-btn" class="cancel-btn">
+          Keep Record
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="/assets/JS/detail.js"></script>
+</body>
+</html>
