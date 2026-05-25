@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Antiquarian | Buy Books</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface": "#1c1c18",
+                    "on-secondary-fixed-variant": "#3d4b2b",
+                    "outline": "#83746f",
+                    "on-tertiary-container": "#ac8c52",
+                    "inverse-surface": "#31312c",
+                    "on-tertiary": "#ffffff",
+                    "on-surface-variant": "#514440",
+                    "tertiary-fixed": "#ffdea9",
+                    "surface-container": "#f0eee7",
+                    "error": "#ba1a1a",
+                    "surface-tint": "#7c5549",
+                    "on-primary-fixed-variant": "#613e33",
+                    "surface-container-highest": "#e5e2db",
+                    "on-secondary-fixed": "#121f05",
+                    "primary": "#280e06",
+                    "on-primary-fixed": "#2f140b",
+                    "secondary-container": "#d7e9bd",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#5c420f",
+                    "secondary": "#546341",
+                    "surface": "#fcf9f2",
+                    "surface-variant": "#e5e2db",
+                    "tertiary-container": "#392600",
+                    "surface-container-low": "#f6f3ec",
+                    "secondary-fixed": "#d7e9bd",
+                    "on-background": "#1c1c18",
+                    "background": "#fcf9f2",
+                    "surface-container-high": "#ebe8e1",
+                    "surface-bright": "#fcf9f2",
+                    "outline-variant": "#d5c3bd",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed-dim": "#bbcda3",
+                    "on-primary-container": "#b38779",
+                    "primary-container": "#402218",
+                    "primary-fixed": "#ffdbd0",
+                    "tertiary-fixed-dim": "#e6c182",
+                    "on-tertiary-fixed": "#271900",
+                    "on-secondary-container": "#5a6947",
+                    "inverse-primary": "#edbbac",
+                    "on-error": "#ffffff",
+                    "tertiary": "#1f1300",
+                    "primary-fixed-dim": "#edbbac",
+                    "surface-dim": "#dcdad3",
+                    "inverse-on-surface": "#f3f0ea",
+                    "error-container": "#ffdad6",
+                    "on-error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "container-max": "1200px",
+                    "margin-mobile": "20px",
+                    "margin-desktop": "80px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "body-md": ["Manrope"],
+                    "headline-xl": ["EB Garamond"],
+                    "headline-lg-mobile": ["EB Garamond"],
+                    "label-md": ["Manrope"],
+                    "body-lg": ["Manrope"],
+                    "headline-lg": ["EB Garamond"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "500"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "32px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    display: inline-block;
+    line-height: 1
+    }
+.parchment-texture {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAQWOY-NOkQZ9IFd-yh3acce8_ihGuwyVZnunTme_KSnPyzn9cI6ILZwjRpZb7LUGA68T4f-wP9anyskZ-srU1AUp-yheuK6SZeh-cUMY-CG3wHKAZ_FLQJ6v9dETk4R2YzdKSMdQhaR0zkiIG0dh7zdswiLFPpjSGurAadWa8yezhrlWARO_47dUmhPcCKQ6kQgPg-gNLLqZZUP5xX5RI-vqhAeGO8mgBpN3iDSTk60q5PTutoyIwCCu_ai1tMTX3WGk022q1zMKRc)
+    }
+.ex-libris-badge {
+    background: linear-gradient(135deg, #ac8c52 0%, #ffdea9 50%, #ac8c52 100%);
+    border: 1px solid #392600;
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2)
+    }
+.curator-controls {
+    display: none;
+}
+.curator-active .curator-controls {
+    display: flex;
+}
+.fade-out {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease-out;
+}
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface parchment-texture min-h-screen font-body-md">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface-dim flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop h-16 z-50 docked full-width top-0 border-b border-outline-variant dark:border-outline shadow-sm sticky">
+<div class="flex items-center gap-4">
+<button class="text-primary hover:bg-surface-container-high transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-headline-lg-mobile text-primary dark:text-primary-fixed italic">The Antiquarian</h1>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<nav class="flex gap-6">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Home</a>
+<a class="text-primary dark:text-primary-fixed font-bold font-body-md border-b-2 border-primary" href="#">Catalog</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Sell</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Profile</a>
+</nav>
+</div>
+<div class="flex items-center gap-2">
+<button class="text-primary hover:bg-surface-container-high transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="text-primary hover:bg-surface-container-high transition-colors p-2 rounded-full relative">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full"></span>
+</button>
+</div>
+</header>
+<main class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop py-12 pb-32" id="catalog-container">
+<!-- Hero Title Section -->
+<div class="mb-12 text-center">
+<h2 class="font-headline-xl text-headline-xl text-primary mb-2">Curated Archives</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Discover a world of rare manuscripts, first editions, and historical treasures preserved through time.</p>
+</div>
+<!-- Filter & Sort Bar -->
+<section class="mb-12 bg-surface-container-low p-4 rounded-xl border border-outline-variant shadow-sm flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex flex-wrap gap-3 justify-center md:justify-start">
+<button class="genre-btn px-4 py-2 bg-primary text-on-primary rounded-full font-label-md text-label-md hover:opacity-90 transition-all">All Genres</button>
+<button class="genre-btn px-4 py-2 bg-surface-container-highest text-on-surface-variant rounded-full font-label-md text-label-md hover:bg-outline-variant transition-all">Classic Literature</button>
+<button class="genre-btn px-4 py-2 bg-surface-container-highest text-on-surface-variant rounded-full font-label-md text-label-md hover:bg-outline-variant transition-all">History</button>
+<button class="genre-btn px-4 py-2 bg-surface-container-highest text-on-surface-variant rounded-full font-label-md text-label-md hover:bg-outline-variant transition-all">First Editions</button>
+</div>
+<div class="flex items-center gap-4 w-full md:w-auto">
+<button class="flex items-center gap-2 px-4 py-2 border border-outline text-on-surface-variant rounded-lg font-label-md text-label-md hover:bg-surface-container-high transition-all" id="curator-toggle">
+<span class="material-symbols-outlined text-[20px]">admin_panel_settings</span>
+<span>Curator Mode</span>
+</button>
+<div class="relative flex-grow md:flex-grow-0">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">sort</span>
+<select class="pl-10 pr-8 py-2 bg-surface-container-lowest border border-outline-variant rounded-lg font-body-md text-body-md appearance-none focus:border-secondary transition-colors w-full">
+<option>Recently Added</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+<option>Condition</option>
+</select>
+</div>
+</div>
+</section>
+<!-- Catalog Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter" id="book-grid">
+<!-- Book Card 1 -->
+<div class="book-card group bg-surface-container border border-outline-variant rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-id="1">
+<div class="relative h-80 overflow-hidden bg-surface-container-highest">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A vintage leather-bound book with gold embossing on the spine, resting on a dark wooden library table. The atmosphere is cozy and studious, with soft sunlight filtering through a high window casting warm shadows. The aesthetic is Academic Luxury with deep mahogany tones and rich textures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmaqhqjtxkuYQUZir4PoYNOowXwlEeuhJ93yMHl8S-V9X39kawshi4Pm85JarJUdJjoqYKuKjL--6V2xUXtOKra3Xtak0vmU7dZDETyL809vjGBIAJPS-3aq-BEscGyHv5FM8QPy6p7wenGohmM1rD0lONuIiq5sC4b-P1J5m4e8473o_xBWbJAMTH-REYjFfopt3Th-g7VDxRAWHYc-tg2IP3__2IxIKDbPmAc1-RVj4g6MkytdjwAO-T3lJtXRfHHxgyqacdsFEN"/>
+<div class="absolute top-4 right-4">
+<div class="ex-libris-badge px-3 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-on-tertiary-fixed shadow-md">Ex Libris</div>
+</div>
+<div class="curator-controls absolute inset-0 bg-primary/20 backdrop-blur-[2px] flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="edit-price-btn p-3 bg-surface text-primary rounded-full shadow-lg hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="remove-book-btn p-3 bg-error text-on-error rounded-full shadow-lg hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<span class="px-2 py-0.5 border border-outline text-[10px] font-bold tracking-widest uppercase bg-surface-container-lowest rounded-sm">Fine</span>
+<span class="book-price font-headline-lg text-primary" data-raw-price="450.00">$450.00</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-primary leading-tight mb-1 group-hover:text-surface-tint transition-colors">The Alchemist's Ledger</h3>
+<p class="font-body-md text-on-surface-variant italic mb-4">A.G. Thornton, 1892</p>
+<div class="mt-auto pt-4 border-t border-outline-variant flex justify-between items-center">
+<span class="text-label-md font-label-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">menu_book</span> First Edition
+                        </span>
+<button class="bg-primary text-on-primary p-2 rounded-full hover:scale-110 transition-transform active:scale-95 shadow-md">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Book Card 2 -->
+<div class="book-card group bg-surface-container border border-outline-variant rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-id="2">
+<div class="relative h-80 overflow-hidden bg-surface-container-highest">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A weathered antique map and a classic novel with frayed edges, arranged on a piece of parchment paper. The scene is illuminated by the soft amber glow of a nearby candle, creating an atmosphere of historical discovery and quiet exploration. Muted tans and earthy greens dominate the palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1VGiQc1shXJSXnhcT5NbCm-wAopuwkWjfrJBmDt0ARizTp0Wal0iKhmCTbgcg3sC0hpR9cHI4j7KCUsQRifV_bhbNQJu_x0sQUKTHfwBFzdvyDseB_ArPbXVeXyKlo_DfF4ZowCebG8zQEO6ex1utQrqorwx4MC25JyMd2EWXYpwzEa5iatIpi-g9a_RBvcKZVvnpspfrZa6c61djihR4juVr0f0hdhe2C4bxOdgDKS7H06OfMC9ShdC27_QEnN_voIVvi2HDKN1K"/>
+<div class="curator-controls absolute inset-0 bg-primary/20 backdrop-blur-[2px] flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="edit-price-btn p-3 bg-surface text-primary rounded-full shadow-lg hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="remove-book-btn p-3 bg-error text-on-error rounded-full shadow-lg hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<span class="px-2 py-0.5 border border-outline text-[10px] font-bold tracking-widest uppercase bg-surface-container-lowest rounded-sm">Good</span>
+<span class="book-price font-headline-lg text-primary" data-raw-price="125.00">$125.00</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-primary leading-tight mb-1 group-hover:text-surface-tint transition-colors">Wanderer of the Steppes</h3>
+<p class="font-body-md text-on-surface-variant italic mb-4">Mikhail Petrov, 1924</p>
+<div class="mt-auto pt-4 border-t border-outline-variant flex justify-between items-center">
+<span class="text-label-md font-label-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">history_edu</span> Travel Log
+                        </span>
+<button class="bg-primary text-on-primary p-2 rounded-full hover:scale-110 transition-transform active:scale-95 shadow-md">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Book Card 3 -->
+<div class="book-card group bg-surface-container border border-outline-variant rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-id="3">
+<div class="relative h-80 overflow-hidden bg-surface-container-highest">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close up of a stack of old books with vellum covers, some with handwritten notes tucked between pages. The background shows a dimly lit shelf filled with similar archives. The lighting is focused and dramatic, highlighting the tactile texture of the paper and aged leather. Professional editorial photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuClbjxVxWPNEacmj2wRQEnJBFdB9zyJ4q2CClBe2URJCd7gGuk65GiADrR4Cp9wQnZVyB93HQjMjYsqfTRMURqh3kPma-W4VjQsn3wqeJHrfUAp7ymE3113yFZ7F5gNIyTtYjwmA0lukF7yqMOmZbduo586XT_fchwhsjRfkLpqHihMiS1sRfgN5L_GL5zHJSpRIvI0zHk3KHapFA9XwW-SjLyhfXS-3fBnOagWm6Q3vZ01-Z375APIvBlby0a0te057JJkHAV2RvVa"/>
+<div class="curator-controls absolute inset-0 bg-primary/20 backdrop-blur-[2px] flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="edit-price-btn p-3 bg-surface text-primary rounded-full shadow-lg hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="remove-book-btn p-3 bg-error text-on-error rounded-full shadow-lg hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<span class="px-2 py-0.5 border border-outline text-[10px] font-bold tracking-widest uppercase bg-surface-container-lowest rounded-sm">Fair</span>
+<span class="book-price font-headline-lg text-primary" data-raw-price="85.00">$85.00</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-primary leading-tight mb-1 group-hover:text-surface-tint transition-colors">Echoes of the Renaissance</h3>
+<p class="font-body-md text-on-surface-variant italic mb-4">Elena Rossi, 1955</p>
+<div class="mt-auto pt-4 border-t border-outline-variant flex justify-between items-center">
+<span class="text-label-md font-label-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">palette</span> Art History
+                        </span>
+<button class="bg-primary text-on-primary p-2 rounded-full hover:scale-110 transition-transform active:scale-95 shadow-md">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Book Card 4 -->
+<div class="book-card group bg-surface-container border border-outline-variant rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-id="4">
+<div class="relative h-80 overflow-hidden bg-surface-container-highest">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A macro shot of an open book showing elegant serif typography on aged yellowed paper. A pair of gold-rimmed spectacles rests on the page. The lighting is soft and diffuse, emphasizing a mood of intellectual curiosity and luxury. Deep forest greens and parchment creams define the aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDb5LkxwBw-w7uygcS39u58K_skH0P79YhC84kp1huBByQedR4znv9jIpv3UGtQJL1Zok3rbxOEE2HAIq2de0jk5jGcyfWp1qow7VVKVdMVD3tpvpIs9jUqBQ0kiHmROH3WGvC76_gYmBmTdJ7WdihdQiBNix5Bvi-RtjzrHDwGrDIOzXCBkI93BXwUQzsKXOaNxeieby-swIqRmGMsOtGYO4GMP1W1L6cJVwid4V2J90XU_Oyzm-PG-Mh06o3chmQR0dukpzCVCyYw"/>
+<div class="absolute top-4 right-4">
+<div class="ex-libris-badge px-3 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-on-tertiary-fixed shadow-md">Ex Libris</div>
+</div>
+<div class="curator-controls absolute inset-0 bg-primary/20 backdrop-blur-[2px] flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="edit-price-btn p-3 bg-surface text-primary rounded-full shadow-lg hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="remove-book-btn p-3 bg-error text-on-error rounded-full shadow-lg hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<span class="px-2 py-0.5 border border-outline text-[10px] font-bold tracking-widest uppercase bg-surface-container-lowest rounded-sm">Pristine</span>
+<span class="book-price font-headline-lg text-primary" data-raw-price="1200.00">$1,200.00</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-primary leading-tight mb-1 group-hover:text-surface-tint transition-colors">Botanical Sketches Vol. II</h3>
+<p class="font-body-md text-on-surface-variant italic mb-4">Sir Julian Banks, 1788</p>
+<div class="mt-auto pt-4 border-t border-outline-variant flex justify-between items-center">
+<span class="text-label-md font-label-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">potted_plant</span> Rare Science
+                        </span>
+<button class="bg-primary text-on-primary p-2 rounded-full hover:scale-110 transition-transform active:scale-95 shadow-md">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Book Card 5 -->
+<div class="book-card group bg-surface-container border border-outline-variant rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-id="5">
+<div class="relative h-80 overflow-hidden bg-surface-container-highest">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A tall stack of books with dark navy and charcoal covers, illuminated by a single warm desk lamp in a dark room. The lighting creates a dramatic chiaroscuro effect, focusing on the textures of the spine. The visual style is premium and archival, suitable for a high-end book collector's catalog." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAG-OGVojoSH5P7QwxzcOKvDSrhD3RAk3OAasIsYi5XAmhqv2FREd2f7MKkOHvHrs3fv9cYkOOUAdvUzJ6pMyGx5eh7RTUWjK-m7xUMKxseGSJXv_2Ef86t6gMfM92_6Z7YHY0GKRTKGzqp71kJBmUWetDaL20UmqaZ_-2Cr6ced9VTBbYfCz9VJ9a4ltEowXWUdZaBDKJIAO3ZEduL4L-UgMJ2TQ4lLxaGvcc7Bjo-Baart2PxRlv_d1uQx9fmfPkoA2rjC0shXN7S"/>
+<div class="curator-controls absolute inset-0 bg-primary/20 backdrop-blur-[2px] flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="edit-price-btn p-3 bg-surface text-primary rounded-full shadow-lg hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="remove-book-btn p-3 bg-error text-on-error rounded-full shadow-lg hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<span class="px-2 py-0.5 border border-outline text-[10px] font-bold tracking-widest uppercase bg-surface-container-lowest rounded-sm">Good</span>
+<span class="book-price font-headline-lg text-primary" data-raw-price="60.00">$60.00</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-primary leading-tight mb-1 group-hover:text-surface-tint transition-colors">The Midnight Watch</h3>
+<p class="font-body-md text-on-surface-variant italic mb-4">C.W. Lewis, 1941</p>
+<div class="mt-auto pt-4 border-t border-outline-variant flex justify-between items-center">
+<span class="text-label-md font-label-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">dark_mode</span> Classic Lit
+                        </span>
+<button class="bg-primary text-on-primary p-2 rounded-full hover:scale-110 transition-transform active:scale-95 shadow-md">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Book Card 6 -->
+<div class="book-card group bg-surface-container border border-outline-variant rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-id="6">
+<div class="relative h-80 overflow-hidden bg-surface-container-highest">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A collection of small pocket-sized books with intricate floral patterned covers, arranged in a flat-lay on a marble surface. The lighting is bright and airy, typical of a modern luxury boutique. The color palette features soft pastels, dusty creams, and gold foil accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZTSRY8O7RoAbsRTwUTMYHPJ4DuoARGYWSkLJhkTofZfX0baPMZtHfes92mPdBza7oB8eCZBqXc95VJB4haiI60SnNy4-ZXkmpoYLmXQh0sQIk98SJa7GrOyGbLbDZ7XHUKvixmAEVVlV99qZMZQrxzZXkaB4gPduztuRC934KskTcZgeeKf1b1tdpkSvapOyk26D_XRGP_OLZA-XhnRVCUcnakaNgOhB703l6azaklZjnAZAPlkKT57y0S-anmQaBwST4pfxW5umI"/>
+<div class="curator-controls absolute inset-0 bg-primary/20 backdrop-blur-[2px] flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="edit-price-btn p-3 bg-surface text-primary rounded-full shadow-lg hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="remove-book-btn p-3 bg-error text-on-error rounded-full shadow-lg hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<span class="px-2 py-0.5 border border-outline text-[10px] font-bold tracking-widest uppercase bg-surface-container-lowest rounded-sm">Fine</span>
+<span class="book-price font-headline-lg text-primary" data-raw-price="320.00">$320.00</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-primary leading-tight mb-1 group-hover:text-surface-tint transition-colors">Victorian Poetry Set</h3>
+<p class="font-body-md text-on-surface-variant italic mb-4">Various Authors, 1880</p>
+<div class="mt-auto pt-4 border-t border-outline-variant flex justify-between items-center">
+<span class="text-label-md font-label-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">auto_stories</span> Collection
+                        </span>
+<button class="bg-primary text-on-primary p-2 rounded-full hover:scale-110 transition-transform active:scale-95 shadow-md">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<nav class="mt-16 flex justify-center items-center gap-4">
+<button class="p-2 text-primary hover:bg-surface-container-high transition-colors rounded-full border border-outline-variant">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-on-primary font-label-md">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors font-label-md">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors font-label-md">3</button>
+<span class="px-2 text-outline">...</span>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors font-label-md">12</button>
+</div>
+<button class="p-2 text-primary hover:bg-surface-container-high transition-colors rounded-full border border-outline-variant">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</nav>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 pb-safe bg-surface-container-low dark:bg-surface-container-lowest border-t border-outline-variant dark:border-outline shadow-[0_-2px_10px_rgba(64,34,24,0.08)] md:hidden rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">home_app_logo</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-secondary-fixed text-on-secondary-container dark:text-on-secondary-fixed rounded-full px-4 py-1 scale-90 duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-label-md text-label-md">Catalog</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">add_circle</span>
+<span class="font-label-md text-label-md">Sell</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="font-label-md text-label-md">Profile</span>
+</a>
+</nav>
+<script>
+        // Centralized Book Management State & Logic
+        const CuratorApp = {
+            isCuratorMode: false,
+            
+            init() {
+                this.cacheDOM();
+                this.bindEvents();
+            },
+
+            cacheDOM() {
+                this.main = document.getElementById('catalog-container');
+                this.grid = document.getElementById('book-grid');
+                this.toggleBtn = document.getElementById('curator-toggle');
+                this.genreButtons = document.querySelectorAll('.genre-btn');
+            },
+
+            bindEvents() {
+                // Toggle Curator Mode
+                this.toggleBtn.addEventListener('click', () => this.toggleCuratorMode());
+
+                // Delegation for book card actions
+                this.grid.addEventListener('click', (e) => {
+                    const editBtn = e.target.closest('.edit-price-btn');
+                    const removeBtn = e.target.closest('.remove-book-btn');
+                    const card = e.target.closest('.book-card');
+
+                    if (editBtn && card) {
+                        this.handlePriceEdit(card);
+                    } else if (removeBtn && card) {
+                        this.handleBookRemoval(card);
+                    }
+                });
+
+                // Micro-interactions for buttons
+                document.querySelectorAll('button').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        btn.style.transform = 'scale(0.95)';
+                        setTimeout(() => btn.style.transform = '', 100);
+                    });
+                });
+
+                // Genre filter toggle effect
+                this.genreButtons.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        this.genreButtons.forEach(b => {
+                            b.classList.remove('bg-primary', 'text-on-primary');
+                            b.classList.add('bg-surface-container-highest', 'text-on-surface-variant');
+                        });
+                        btn.classList.remove('bg-surface-container-highest', 'text-on-surface-variant');
+                        btn.classList.add('bg-primary', 'text-on-primary');
+                    });
+                });
+            },
+
+            toggleCuratorMode() {
+                this.isCuratorMode = !this.isCuratorMode;
+                this.main.classList.toggle('curator-active', this.isCuratorMode);
+                
+                if (this.isCuratorMode) {
+                    this.toggleBtn.classList.add('bg-primary', 'text-on-primary');
+                    this.toggleBtn.classList.remove('text-on-surface-variant');
+                } else {
+                    this.toggleBtn.classList.remove('bg-primary', 'text-on-primary');
+                    this.toggleBtn.classList.add('text-on-surface-variant');
+                }
+            },
+
+            handlePriceEdit(card) {
+                const priceEl = card.querySelector('.book-price');
+                const currentPrice = priceEl.getAttribute('data-raw-price');
+                
+                const newPrice = prompt('Enter new price for this listing:', currentPrice);
+                
+                if (newPrice !== null) {
+                    const cleanedPrice = parseFloat(newPrice.replace(/[^0-9.]/g, ''));
+                    if (!isNaN(cleanedPrice)) {
+                        const formatted = new Intl.NumberFormat('en-US', {
+                            style: 'currency',
+                            currency: 'USD',
+                        }).format(cleanedPrice);
+                        
+                        priceEl.textContent = formatted;
+                        priceEl.setAttribute('data-raw-price', cleanedPrice.toFixed(2));
+                        
+                        // Small success feedback
+                        priceEl.classList.add('text-secondary');
+                        setTimeout(() => priceEl.classList.remove('text-secondary'), 1000);
+                    } else {
+                        alert('Please enter a valid numeric value.');
+                    }
+                }
+            },
+
+            handleBookRemoval(card) {
+                if (confirm('Are you sure you want to remove this historical archive from the catalog?')) {
+                    card.classList.add('fade-out');
+                    setTimeout(() => {
+                        card.remove();
+                        this.checkEmptyGrid();
+                    }, 400);
+                }
+            },
+
+            checkEmptyGrid() {
+                if (this.grid.children.length === 0) {
+                    this.grid.innerHTML = `
+                        <div class="col-span-full py-20 text-center">
+                            <span class="material-symbols-outlined text-6xl text-outline-variant mb-4">inventory_2</span>
+                            <p class="font-headline-lg text-primary">Archives are currently empty.</p>
+                            <button onclick="location.reload()" class="mt-4 text-secondary underline font-label-md">Restore Catalog</button>
+                        </div>
+                    `;
+                }
+            }
+        };
+
+        // Initialize App
+        CuratorApp.init();
+    </script>
+</body></html>

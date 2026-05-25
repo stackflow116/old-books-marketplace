@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Antiquarian | Rare &amp; Collectible Books</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface": "#1c1c18",
+                    "on-secondary-fixed-variant": "#3d4b2b",
+                    "outline": "#83746f",
+                    "on-tertiary-container": "#ac8c52",
+                    "inverse-surface": "#31312c",
+                    "on-tertiary": "#ffffff",
+                    "on-surface-variant": "#514440",
+                    "tertiary-fixed": "#ffdea9",
+                    "surface-container": "#f0eee7",
+                    "error": "#ba1a1a",
+                    "surface-tint": "#7c5549",
+                    "on-primary-fixed-variant": "#613e33",
+                    "surface-container-highest": "#e5e2db",
+                    "on-secondary-fixed": "#121f05",
+                    "primary": "#280e06",
+                    "on-primary-fixed": "#2f140b",
+                    "secondary-container": "#d7e9bd",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#5c420f",
+                    "secondary": "#546341",
+                    "surface": "#fcf9f2",
+                    "surface-variant": "#e5e2db",
+                    "tertiary-container": "#392600",
+                    "surface-container-low": "#f6f3ec",
+                    "secondary-fixed": "#d7e9bd",
+                    "on-background": "#1c1c18",
+                    "background": "#fcf9f2",
+                    "surface-container-high": "#ebe8e1",
+                    "surface-bright": "#fcf9f2",
+                    "outline-variant": "#d5c3bd",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed-dim": "#bbcda3",
+                    "on-primary-container": "#b38779",
+                    "primary-container": "#402218",
+                    "primary-fixed": "#ffdbd0",
+                    "tertiary-fixed-dim": "#e6c182",
+                    "on-tertiary-fixed": "#271900",
+                    "on-secondary-container": "#5a6947",
+                    "inverse-primary": "#edbbac",
+                    "on-error": "#ffffff",
+                    "tertiary": "#1f1300",
+                    "primary-fixed-dim": "#edbbac",
+                    "surface-dim": "#dcdad3",
+                    "inverse-on-surface": "#f3f0ea",
+                    "error-container": "#ffdad6",
+                    "on-error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "container-max": "1200px",
+                    "margin-mobile": "20px",
+                    "margin-desktop": "80px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "body-md": ["Manrope"],
+                    "headline-xl": ["EB Garamond"],
+                    "headline-lg-mobile": ["EB Garamond"],
+                    "label-md": ["Manrope"],
+                    "body-lg": ["Manrope"],
+                    "headline-lg": ["EB Garamond"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "500"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "32px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #fcf9f2 }
+        .material-symbols-outlined {
+            font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+            vertical-align: middle
+        }
+        .paper-texture {
+            background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDYVu1KuioW-wBzlLTrG-3-NC2ps-e3mZf9GJFCFum8T_0wqvOntKFm4DIzXlwKzN52O8ds5LUdVdpYM0MSI6X4KTZqrSOdd0X3oUZeRQNeaB3TuiTt7A4Vte_zn7aIGMw1nfwL4wLghe_6kTpoeMbqlFwGhE0ezZQaxpzgTx0Jb4KeXY97OirM8POHTuexJNN4cEk9ZeQ2K1r0ODNLE4htM3QdieAuRH8gpJ6l-i0I-c8wf0dKKb7Es0qR7tgPGq2aIk5C5mHbGqtT);
+            opacity: 0.05
+        }
+        .ex-libris-border {
+            border: 2px double #83746f;
+            padding: 4px;
+            position: relative
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none }
+        
+        .curator-controls {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .curator-mode-active .curator-controls {
+            display: flex;
+            opacity: 1;
+        }
+        .card-fade-out {
+            opacity: 0;
+            transform: scale(0.95);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+    </style>
+<style>
+        body { min-height: max(884px, 100dvh); }
+    </style>
+</head>
+<body class="font-body-md text-on-surface">
+<!-- Top Navigation Bar -->
+<header class="bg-surface sticky top-0 z-50 flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop h-16 border-b border-outline-variant shadow-sm">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer">menu</span>
+<h1 class="font-headline-lg-mobile text-primary italic tracking-tight">The Antiquarian</h1>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant hover:text-primary transition-all font-label-md text-label-md" href="/admin.html">Dashboard</a>
+<a class="text-primary font-bold font-label-md text-label-md transition-all" href="/index.html">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-all font-label-md text-label-md" href="#">Catalog</a>
+<a class="text-on-surface-variant hover:text-primary transition-all font-label-md text-label-md" href="#">Sell</a>
+<a class="text-on-surface-variant hover:text-primary transition-all font-label-md text-label-md" href="#">Archives</a>
+<!-- Curator Mode Toggle (Desktop) -->
+<div class="flex items-center gap-2 ml-4 px-3 py-1 bg-surface-container rounded-full border border-outline-variant">
+<span class="text-[10px] font-label-md uppercase tracking-wider text-on-surface-variant">Curator</span>
+<button aria-checked="false" class="relative inline-flex h-5 w-9 items-center rounded-full bg-outline-variant transition-colors focus:outline-none" id="curator-toggle" role="switch">
+<span class="inline-block h-3 w-3 translate-x-1 rounded-full bg-white transition-transform" id="curator-toggle-dot"></span>
+</button>
+</div>
+</nav>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer">search</span>
+<span class="material-symbols-outlined text-primary cursor-pointer">shopping_bag</span>
+</div>
+</header>
+<main class="relative">
+<!-- Hero Section -->
+<section class="relative h-[707px] flex items-center justify-center overflow-hidden bg-primary-container">
+<div class="absolute inset-0 opacity-40">
+<img alt="Cozy Library" class="w-full h-full object-cover" data-alt="A cinematic, low-angle shot of a majestic private library at dusk. The room features floor-to-ceiling mahogany bookshelves filled with thousands of leather-bound antique books. Warm, golden light from a green-shaded banker's lamp illuminates a foreground study desk with an open book and a magnifying glass. The atmosphere is quiet, prestigious, and filled with the dust motes of history, using deep browns and gold accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnW8JYYZoWQHjyenrRFQUaNpSHNJS07_-rkRQOhCwiPJGcIU96vFNueSOA0hD817TCEtUIN6x82SgJwwwH8258883gZ4c4KDWifS4Uqgxd0xusbZ0TJL9x8FbdfPiiopq864jkBMxkQMP1cyURXOVr1fBNBp9m0ApOFkXsS5qfQn_SpNf8zypcVDewobJ1vC7-1Bjqr_7GnbbSqucV49k9Stb_E2fVAm8r53FwpLuPyxWbZtHdRjUxtfihSSkQzVF-4E54wfWzY_uC"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container via-transparent to-transparent"></div>
+<div class="relative z-10 max-w-container-max px-margin-mobile text-center">
+<span class="inline-block font-label-md text-label-md text-tertiary-fixed mb-4 tracking-widest uppercase">Est. 1892</span>
+<h2 class="font-headline-xl text-headline-xl text-white mb-6">Curating the World's Lost Chapters</h2>
+<!-- Search Bar (Letterpress Style) -->
+<div class="max-w-2xl mx-auto mt-12 group">
+<div class="relative flex items-center bg-surface-container-low rounded-xl shadow-inner border border-outline-variant p-2 transition-all focus-within:ring-2 focus-within:ring-secondary">
+<span class="material-symbols-outlined px-4 text-outline">search</span>
+<input class="w-full bg-transparent border-none focus:ring-0 font-headline-lg text-headline-lg text-primary placeholder-outline-variant italic" placeholder="Search by title, author, or era..." type="text"/>
+<button class="bg-primary text-white font-label-md text-label-md px-8 py-3 rounded-lg hover:bg-primary-container transition-all">Search</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Rare Finds -->
+<section class="py-24 bg-surface relative overflow-hidden" id="featured-section">
+<div class="max-w-container-max mx-auto px-margin-mobile">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-primary">Featured Rare Finds</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Authenticated first editions and historical treasures.</p>
+</div>
+<a class="font-label-md text-label-md text-on-primary-container border-b border-on-primary-container pb-1 hover:text-primary hover:border-primary transition-all" href="#">View Full Catalog</a>
+</div>
+<div class="flex gap-gutter overflow-x-auto pb-12 no-scrollbar snap-x snap-mandatory" id="book-grid">
+<!-- Book Card 1 -->
+<div class="book-card min-w-[320px] bg-surface-container-low border border-outline-variant p-4 snap-start hover:shadow-lg transition-all group relative">
+<div class="relative aspect-[3/4] mb-4 overflow-hidden bg-surface-container-highest">
+<img alt="Rare Book" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A high-detail photograph of a weathered 19th-century first edition book with a deep forest green leather cover and intricate gold-leaf floral embossing on the spine. The book rests on a textured parchment surface with soft, directional window lighting that highlights the crackled texture of the aged leather and the yellowed edges of the pages. The aesthetic is scholarly and antique." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrI8KxJhaCG5x8xZucRNTpN3SNhowmgs1OOhivKS5q4bpzDowuVdBzDCGTt-a1c1HU3uYdsxGBX8XyHNqScf5HPiIcY3LDFsW3xqGddti_xHQPp7z8qFGEFJozo-Y7YC6x4XjmVNSOG8EAd4tFyMfeoSYkXSab_PSHvk13oNxqUbip4uO6e1YCRvM-vMJXjRNrMqMqM4ukuLVAezpJX8tzd87sUGMDZLOK3OTW2fQoNggsZBXTsTAqwEdthiZMC7bJIM4Wn7vVvTkJ"/>
+<div class="absolute top-4 left-4">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed font-label-md text-label-md px-3 py-1 border border-on-tertiary-fixed-variant">EX LIBRIS</span>
+</div>
+<!-- Curator Controls -->
+<div class="curator-controls absolute top-4 right-4 flex gap-2">
+<button class="edit-btn p-2 bg-surface text-primary rounded shadow-md hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="delete-btn p-2 bg-error-container text-on-error-container rounded shadow-md hover:bg-error hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+<h4 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">The Alchemist's Ledger</h4>
+<p class="font-body-md text-body-md text-on-surface-variant italic">Circa 1745 • London</p>
+<div class="flex justify-between items-center mt-6">
+<span class="price-tag font-headline-lg-mobile text-primary">$4,250</span>
+<button class="material-symbols-outlined text-outline hover:text-primary transition-all">bookmark</button>
+</div>
+</div>
+<!-- Book Card 2 -->
+<div class="book-card min-w-[320px] bg-surface-container-low border border-outline-variant p-4 snap-start hover:shadow-lg transition-all group relative">
+<div class="relative aspect-[3/4] mb-4 overflow-hidden bg-surface-container-highest">
+<img alt="Vintage Cloth Book" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Close-up of a vibrant red cloth-bound classic novel from the early 20th century, featuring elegant black typography and decorative art deco borders. The book is positioned diagonally in a brightly lit library setting, with soft bokeh of other books in the background. The mood is sophisticated and nostalgic, emphasizing the tactile quality of the fabric binding and the crispness of the vintage design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbQJ2ARfjSDOwCCbT0yFovFGJiSoMI9TQoz_euvvNhAc7iDoYMEdSDBISE5TwGbDlo_QF5SmOy282bcDFeRdszl5RdtEQjC-nHEl4jGCAYBPoe0i1wJU9xZ06hKlEYnZdNeJVSrJ_UzVHahS25Ed9rL3MIQxO0PRSjoZB5IzS8FaJxM0uEOb6csM9yK8pY82tagJ4by8KqhZFVLCOf4nPsq7PUppXrM_Slx8CbiO1x9iPCJmynwfm7SZPc_hxX36nxY_DnZLVC7mTY"/>
+<!-- Curator Controls -->
+<div class="curator-controls absolute top-4 right-4 flex gap-2">
+<button class="edit-btn p-2 bg-surface text-primary rounded shadow-md hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="delete-btn p-2 bg-error-container text-on-error-container rounded shadow-md hover:bg-error hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+<h4 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Nocturnal Voyages</h4>
+<p class="font-body-md text-body-md text-on-surface-variant italic">1912 • First Edition</p>
+<div class="flex justify-between items-center mt-6">
+<span class="price-tag font-headline-lg-mobile text-primary">$890</span>
+<button class="material-symbols-outlined text-outline hover:text-primary transition-all">bookmark</button>
+</div>
+</div>
+<!-- Book Card 3 -->
+<div class="book-card min-w-[320px] bg-surface-container-low border border-outline-variant p-4 snap-start hover:shadow-lg transition-all group relative">
+<div class="relative aspect-[3/4] mb-4 overflow-hidden bg-surface-container-highest">
+<img alt="Vellum Journals" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A stack of beautifully aged journals and diaries with hand-stitched bindings and vellum covers. One journal is tied with a thin hemp string and has a dried pressed flower tucked into the side. The lighting is warm and amber-toned, creating a sense of intimacy and personal history. The textures of the vellum and the handmade paper are vivid and inviting, set against a dark oak background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9s4qAz3XO33P_h_GNMoLFuThqAbBZgH7mDCyrnXtUioWEGnVDmDrgSzdj3blvmc3a6e4KccIwpZUglEIY3cIlbQti52UibJ4ObbUOqbFi_JMlTbhxWA04uwuFuD3feTU22ZLuYlQpdBAuw8GS7PJQYp9bvv-1SrJSQtk7pmYb48279Aym6FoIi6qYxA25k1SfM9vxHDQkDOukBKuLRcL-nkZMhQ5UlrPDv8M2ncGQOWecGngsuS37SquMrvVMS_I9xc59c1mVrvc8"/>
+<div class="absolute top-4 left-4">
+<span class="bg-secondary-container text-on-secondary-container font-label-md text-label-md px-3 py-1 border border-on-secondary-container">MINT CONDITION</span>
+</div>
+<!-- Curator Controls -->
+<div class="curator-controls absolute top-4 right-4 flex gap-2">
+<button class="edit-btn p-2 bg-surface text-primary rounded shadow-md hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="delete-btn p-2 bg-error-container text-on-error-container rounded shadow-md hover:bg-error hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+<h4 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Archival Journals (Lot 4)</h4>
+<p class="font-body-md text-body-md text-on-surface-variant italic">Hand-bound • 1860s</p>
+<div class="flex justify-between items-center mt-6">
+<span class="price-tag font-headline-lg-mobile text-primary">$1,200</span>
+<button class="material-symbols-outlined text-outline hover:text-primary transition-all">bookmark</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Start Selling Card (Asymmetric Layout) -->
+<section class="py-24 bg-surface-container-high relative overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-mobile">
+<div class="grid md:grid-cols-12 items-center gap-16">
+<div class="md:col-span-7">
+<div class="ex-libris-border inline-block mb-8">
+<span class="font-label-md text-label-md text-primary uppercase px-6 py-2">Join the Guild</span>
+</div>
+<h2 class="font-headline-xl text-headline-xl text-primary mb-8">Your Archive Deserves a Worthy Successor</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-xl">
+                            We bridge the gap between discerning collectors and rare book merchants. List your rare finds in our premium catalog and reach an global audience of bibliophiles. Our curators provide valuation assistance and provenance verification for all high-value listings.
+                        </p>
+<div class="flex flex-col sm:flex-row gap-6">
+<button class="bg-primary text-white font-label-md text-label-md px-10 py-5 rounded-lg shadow-xl hover:scale-105 transition-all flex items-center justify-center gap-2">
+                                Start Selling <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="bg-white border border-outline-variant text-primary font-label-md text-label-md px-10 py-5 rounded-lg hover:bg-surface transition-all">
+                                Valuation Guide
+                            </button>
+</div>
+</div>
+<div class="md:col-span-5 relative group">
+<div class="relative z-10 p-2 bg-white border border-outline-variant rotate-2 shadow-2xl transition-transform group-hover:rotate-0 duration-500">
+<img alt="Write your history" class="w-full h-auto grayscale-[20%] hover:grayscale-0 transition-all" data-alt="A macro shot of a fountain pen resting on a piece of high-quality deckle-edged paper. The pen has a gold nib with ink droplets, and the paper shows faint, elegant cursive handwriting. The background is a soft-focus library with leather bindings. The lighting is focused and warm, emphasizing the craftsmanship of writing and the value of historical documents in a sophisticated, academic luxury style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvFzPSTtGGzYg3KJsMel8mzBBLdHv74mjH0R84wx1qZuFX1J666x40sj2fPWpmtj26eaiJGcQF8TwiMc6Yx-Yb8ddD9ac6YE2BhAVv5I3t2ktuB5ekVd-Qull0sSY666ZKKYGh9IJzxHt1I9_dpZ54XlYQq57CqnxoBFw1nROBICMhFpNR7zSjhrq7v9RbwftesfAGB_Ho8W_O5EekktVT3ND68z_NFtOJcENMhmgTFrElPjT1wQqAHd3gFsbBWzJSkUmkCEYKrZzy"/>
+</div>
+<div class="absolute inset-0 bg-primary-container -translate-x-4 translate-y-4 -z-10 opacity-10"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Provenance Section -->
+<section class="py-24 bg-surface border-t border-outline-variant">
+<div class="max-w-container-max mx-auto px-margin-mobile text-center">
+<h3 class="font-headline-lg text-headline-lg text-primary mb-16">The Antiquarian Standard</h3>
+<div class="grid md:grid-cols-3 gap-12">
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-4xl text-on-tertiary-container mb-6" style="font-variation-settings: 'FILL' 1;">verified</span>
+<h4 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-4">Provenance Check</h4>
+<p class="font-body-md text-body-md text-on-surface-variant px-4">Every book over $500 undergoes a rigorous three-point authentication process by our archival specialists.</p>
+</div>
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-4xl text-on-tertiary-container mb-6" style="font-variation-settings: 'FILL' 1;">history_edu</span>
+<h4 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-4">Global Network</h4>
+<p class="font-body-md text-body-md text-on-surface-variant px-4">Access a discreet network of private collectors and prestigious institutional libraries across six continents.</p>
+</div>
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-4xl text-on-tertiary-container mb-6" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<h4 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-4">Secure Transit</h4>
+<p class="font-body-md text-body-md text-on-surface-variant px-4">Climate-controlled, insured white-glove shipping ensures your rare acquisitions arrive in pristine, archival condition.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary text-surface-container py-24 px-margin-mobile md:px-margin-desktop">
+<div class="max-w-container-max mx-auto">
+<div class="grid md:grid-cols-4 gap-16 mb-20">
+<div class="md:col-span-1">
+<h2 class="font-headline-lg text-headline-lg italic mb-8">The Antiquarian</h2>
+<p class="font-body-md text-body-md text-outline-variant">A sanctuary for the written word and the history that binds us. Serving collectors since 1892.</p>
+</div>
+<div>
+<h5 class="font-label-md text-label-md uppercase mb-8 tracking-widest text-on-primary-fixed-variant">Navigation</h5>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md hover:text-white transition-colors" href="#">Catalog</a></li>
+<li><a class="font-body-md text-body-md hover:text-white transition-colors" href="#">Rare Finds</a></li>
+<li><a class="font-body-md text-body-md hover:text-white transition-colors" href="#">Start Selling</a></li>
+<li><a class="font-body-md text-body-md hover:text-white transition-colors" href="#">Appraisal</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-md text-label-md uppercase mb-8 tracking-widest text-on-primary-fixed-variant">The Archive</h5>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md hover:text-white transition-colors" href="#">Journal</a></li>
+<li><a class="font-body-md text-body-md hover:text-white transition-colors" href="#">Our Mission</a></li>
+<li><a class="font-body-md text-body-md hover:text-white transition-colors" href="#">Restoration</a></li>
+<li><a class="font-body-md text-body-md hover:text-white transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-md text-label-md uppercase mb-8 tracking-widest text-on-primary-fixed-variant">Membership</h5>
+<p class="font-body-md text-body-md text-outline-variant mb-6">Receive curated catalogs and auction alerts.</p>
+<div class="flex border-b border-outline-variant pb-2">
+<input class="bg-transparent border-none text-white focus:ring-0 w-full placeholder-outline-variant font-body-md" placeholder="Email address" type="email"/>
+<button class="material-symbols-outlined text-outline-variant hover:text-white">east</button>
+</div>
+</div>
+</div>
+<div class="pt-12 border-t border-primary-container flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="font-label-md text-label-md text-outline-variant">© 1892 - 2024 The Antiquarian Marketplace. All Rights Reserved.</p>
+<div class="flex gap-8">
+<a class="text-outline-variant hover:text-white transition-all" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="text-outline-variant hover:text-white transition-all" href="#"><span class="material-symbols-outlined">mail</span></a>
+</div>
+</div>
+</div>
+</footer>
+<!-- Bottom Nav (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 pb-safe bg-surface-container-low border-t border-outline-variant shadow-[0_-2px_10px_rgba(64,34,24,0.08)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 scale-90" href="#">
+<span class="material-symbols-outlined">home_app_logo</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-label-md text-label-md">Catalog</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1" href="#">
+<span class="material-symbols-outlined">add_circle</span>
+<span class="font-label-md text-label-md">Sell</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="font-label-md text-label-md">Profile</span>
+</a>
+</nav>
+<script>
+        // Micro-interactions for horizontal scroll
+        const scrollContainer = document.querySelector('.overflow-x-auto');
+        if(scrollContainer) {
+            scrollContainer.addEventListener('wheel', (evt) => {
+                evt.preventDefault();
+                scrollContainer.scrollLeft += evt.deltaY;
+            }, { passive: false });
+        }
+
+        // Search bar active state logic
+        const searchInput = document.querySelector('input');
+        const searchContainer = searchInput?.parentElement;
+        if(searchInput && searchContainer) {
+            searchInput.addEventListener('focus', () => {
+                searchContainer.classList.add('scale-[1.01]');
+            });
+            searchInput.addEventListener('blur', () => {
+                searchContainer.classList.remove('scale-[1.01]');
+            });
+        }
+
+        // Curator Mode Logic
+        const curatorToggle = document.getElementById('curator-toggle');
+        const curatorToggleDot = document.getElementById('curator-toggle-dot');
+        const featuredSection = document.getElementById('featured-section');
+        let isCuratorMode = false;
+
+        curatorToggle.addEventListener('click', () => {
+            isCuratorMode = !isCuratorMode;
+            
+            // UI Toggle States
+            if (isCuratorMode) {
+                curatorToggle.classList.replace('bg-outline-variant', 'bg-primary');
+                curatorToggleDot.classList.replace('translate-x-1', 'translate-x-5');
+                featuredSection.classList.add('curator-mode-active');
+            } else {
+                curatorToggle.classList.replace('bg-primary', 'bg-outline-variant');
+                curatorToggleDot.classList.replace('translate-x-5', 'translate-x-1');
+                featuredSection.classList.remove('curator-mode-active');
+            }
+        });
+
+        // Delegate Edit and Delete Actions
+        document.addEventListener('click', (e) => {
+            const editBtn = e.target.closest('.edit-btn');
+            const deleteBtn = e.target.closest('.delete-btn');
+
+            if (editBtn) {
+                const card = editBtn.closest('.book-card');
+                const priceElement = card.querySelector('.price-tag');
+                const currentPrice = priceElement.textContent;
+                const newPrice = prompt("Enter new price for this archival item:", currentPrice);
+                
+                if (newPrice !== null && newPrice.trim() !== "") {
+                    priceElement.textContent = newPrice;
+                }
+            }
+
+            if (deleteBtn) {
+                const card = deleteBtn.closest('.book-card');
+                if (confirm("Are you sure you want to remove this item from the featured collection?")) {
+                    card.classList.add('card-fade-out');
+                    setTimeout(() => {
+                        card.remove();
+                    }, 400);
+                }
+            }
+        });
+    </script>
+</body></html>
