@@ -308,7 +308,7 @@ This project is developed for educational and semester project purposes.
 
 # Author
 
-**Ehaab A**
+**Ehaab Ahmad**
 
 Frontend Web Developer
 
