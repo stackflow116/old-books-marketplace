@@ -1,0 +1,43 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "Clean Code",
+      "author": "Robert C. Martin",
+      "category": "Programming",
+      "price": 2500,
+      "condition": "Used",
+      "seller": "Ali Khan",
+      "phone": "03001234567",
+      "image": "https://covers.openlibrary.org/b/id/9610921-L.jpg",
+      "description": "Good condition with highlighted notes.",
+      "status": "available"
+    },
+    {
+      "id": 2,
+      "title": "Introduction to Algorithms",
+      "author": "Thomas H. Cormen",
+      "category": "Computer Science",
+      "price": 3200,
+      "condition": "Like New",
+      "seller": "Ahmed Raza",
+      "phone": "03111222333",
+      "image": "https://covers.openlibrary.org/b/id/13518218-L.jpg",
+      "description": "Third edition in excellent condition.",
+      "status": "available"
+    },
+    {
+      "id": 3,
+      "title": "Database System Concepts",
+      "author": "Abraham Silberschatz",
+      "category": "Database",
+      "price": 2800,
+      "condition": "Used",
+      "seller": "Sara Noor",
+      "phone": "03219876543",
+      "image": "https://covers.openlibrary.org/b/id/12609177-L.jpg",
+      "description": "Slightly damaged cover but readable.",
+      "status": "sold"
+    }
+  ]
+}
