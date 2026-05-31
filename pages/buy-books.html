@@ -187,9 +187,13 @@
     </nav>
 
     <div class="flex items-center gap-2">
+      <input type="text" id="searchInput" placeholder="Search Books...">
+
+<div id="google-books">
       <button class="text-primary hover:bg-surface-container-high transition-colors p-2 rounded-full">
-        <span title="Search" class="material-symbols-outlined">search</span>
+        <span title="Search" id="searchBtn" class="material-symbols-outlined">search</span>
       </button>
+      </div>
 
       <button class="text-primary hover:bg-surface-container-high transition-colors p-2 rounded-full relative">
         <span  title="Shopping Cart" class="material-symbols-outlined">shopping_bag</span>
@@ -395,5 +399,6 @@
   </nav>
 
   <script src="/assets/JS/buy.js"></script>
+  <script type="module" src="/assets/JS/buy.js"></script>
 </body>
 </html>

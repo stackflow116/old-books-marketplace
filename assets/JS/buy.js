@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const CuratorApp = {
   isCuratorMode: false,
 
@@ -187,36 +186,43 @@ const CuratorApp = {
 };
 
 CuratorApp.init();
-=======
-// Button click animation
-const buttons = document.querySelectorAll("button");
 
-buttons.forEach((button) => {
-  button.addEventListener("click", () => {
 
-    button.style.transform = "scale(0.95)";
+/////////////////////////////
+//////////////Search Books///
+////////////////////////////
+import { searchBooks } from "./api.js";
 
-    setTimeout(() => {
-      button.style.transform = "scale(1)";
-    }, 100);
+document
+.getElementById("searchBtn")
+.addEventListener("click", async () => {
 
-  });
+    const query =
+        document.getElementById("searchInput").value;
+
+    const books =
+        await searchBooks(query);
+
+    displayBooks(books);
 });
 
-// Filter button active state
-const filterButtons = document.querySelectorAll(".filter-btn");
+function displayBooks(books) {
 
-filterButtons.forEach((button) => {
+    const container =
+        document.getElementById("google-books");
 
-  button.addEventListener("click", () => {
+    container.innerHTML = "";
 
-    filterButtons.forEach((btn) => {
-      btn.classList.remove("active-filter");
+    books.forEach(book => {
+
+        const info = book.volumeInfo;
+
+        container.innerHTML += `
+            <div class="book-card">
+                <img src="${info.imageLinks?.thumbnail || ''}">
+                <h3>${info.title}</h3>
+                <p>${info.authors?.join(", ") || "Unknown"}</p>
+            </div>
+        `;
     });
-
-    button.classList.add("active-filter");
-
-  });
-
-});
->>>>>>> d7e0ce82965b573550499d41b889982c7d7166ed
+}

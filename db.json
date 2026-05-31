@@ -2,42 +2,75 @@
   "books": [
     {
       "id": 1,
-      "title": "Clean Code",
-      "author": "Robert C. Martin",
-      "category": "Programming",
-      "price": 2500,
-      "condition": "Used",
-      "seller": "Ali Khan",
-      "phone": "03001234567",
-      "image": "https://covers.openlibrary.org/b/id/9610921-L.jpg",
-      "description": "Good condition with highlighted notes.",
-      "status": "available"
+      "title": "The Alchemist's Ledger",
+      "author": "Unknown Author",
+      "isbn": "978-1111111111",
+      "year": "2020",
+      "edition": "First Edition",
+      "price": "$4,250",
+      "status": "Available",
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBrI8KxJhaCG5x8xZucRNTpN3SNhowmgs1OOhivKS5q4bpzDowuVdBzDCGTt-a1c1HU3uYdsxGBX8XyHNqScf5HPiIcY3LDFsW3xqGddti_xHQPp7z8qFGEFJozo-Y7YC6x4XjmVNSOG8EAd4tFyMfeoSYkXSab_PSHvk13oNxqUbip4uO6e1YCRvM-vMJXjRNrMqMqM4ukuLVAezpJX8tzd87sUGMDZLOK3OTW2fQoNggsZBXTsTAqwEdthiZMC7bJIM4Wn7vVvTkJ"
     },
     {
       "id": 2,
-      "title": "Introduction to Algorithms",
-      "author": "Thomas H. Cormen",
-      "category": "Computer Science",
-      "price": 3200,
-      "condition": "Like New",
-      "seller": "Ahmed Raza",
-      "phone": "03111222333",
-      "image": "https://covers.openlibrary.org/b/id/13518218-L.jpg",
-      "description": "Third edition in excellent condition.",
-      "status": "available"
+      "title": "Nocturnal Voyages",
+      "author": "Henry Blake",
+      "isbn": "978-2222222222",
+      "year": "2018",
+      "edition": "Second Edition",
+      "price": "$890",
+      "status": "Available",
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAbQJ2ARfjSDOwCCbT0yFovFGJiSoMI9TQoz_euvvNhAc7iDoYMEdSDBISE5TwGbDlo_QF5SmOy282bcDFeRdszl5RdtEQjC-nHEl4jGCAYBPoe0i1wJU9xZ06hKlEYnZdNeJVSrJ_UzVHahS25Ed9rL3MIQxO0PRSjoZB5IzS8FaJxM0uEOb6csM9yK8pY82tagJ4by8KqhZFVLCOf4nPsq7PUppXrM_Slx8CbiO1x9iPCJmynwfm7SZPc_hxX36nxY_DnZLVC7mTY"
     },
     {
       "id": 3,
-      "title": "Database System Concepts",
-      "author": "Abraham Silberschatz",
-      "category": "Database",
-      "price": 2800,
-      "condition": "Used",
-      "seller": "Sara Noor",
-      "phone": "03219876543",
-      "image": "https://covers.openlibrary.org/b/id/12609177-L.jpg",
-      "description": "Slightly damaged cover but readable.",
-      "status": "sold"
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "isbn": "978-3333333333",
+      "year": "1925",
+      "edition": "First Edition",
+      "price": "$14,500",
+      "status": "Available",
+      "image": "https://via.placeholder.com/200x300?text=The+Great+Gatsby"
+    },
+    {
+      "id": 4,
+      "title": "Ulysses",
+      "author": "James Joyce",
+      "isbn": "978-4444444444",
+      "year": "1922",
+      "edition": "Shakespeare & Co. First",
+      "price": "$42,000",
+      "status": "Reserved",
+      "image": "https://via.placeholder.com/200x300?text=Ulysses"
+    },
+    {
+      "id": 5,
+      "title": "Moby Dick",
+      "author": "Herman Melville",
+      "isbn": "978-5555555555",
+      "year": "1851",
+      "edition": "First American Edition",
+      "price": "$180,000",
+      "status": "Sold",
+      "image": "https://via.placeholder.com/200x300?text=Moby+Dick"
+    },
+    {
+      "id": 6,
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "isbn": "978-6666666666",
+      "year": "1937",
+      "edition": "First Printing",
+      "price": "$65,000",
+      "status": "Available",
+      "image": "https://via.placeholder.com/200x300?text=The+Hobbit"
     }
-  ]
+  ],
+
+  "users": [],
+
+  "orders": [],
+
+  "wishlist": []
 }

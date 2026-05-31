@@ -278,3 +278,42 @@ booksContainer.addEventListener(
 // ==========================
 
 renderBooks();
+
+// ==========================
+// Search Google Books 
+// ==========================
+import { searchBooks } from "./api.js";
+
+document
+.getElementById("searchBtn")
+.addEventListener("click", async () => {
+
+    const query =
+        document.getElementById("searchInput").value;
+
+    const books =
+        await searchBooks(query);
+
+    displayBooks(books);
+});
+
+function displayBooks(books) {
+
+    const container =
+        document.getElementById("google-books");
+
+    container.innerHTML = "";
+
+    books.forEach(book => {
+
+        const info = book.volumeInfo;
+
+        container.innerHTML += `
+            <div class="book-card">
+                <img src="${info.imageLinks?.thumbnail || ''}">
+                <h3>${info.title}</h3>
+                <p>${info.authors?.join(", ") || "Unknown"}</p>
+            </div>
+        `;
+    });
+}

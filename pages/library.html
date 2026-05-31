@@ -168,12 +168,13 @@
     </h1>
 
     <div class="hidden md:flex gap-8">
-<a class="text-primary font-bold font-label-md transition-all opacity-80 hover:bg-surface-container-high scale-95" href="/admin.html">Dashboard</a>
+
+<a class="text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-md px-2 py-1" href="/admin.html">Dashboard</a>
 <a class="text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-md px-2 py-1" href="/index.html">Home</a>
 <a class="text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-md px-2 py-1" href="/pages/buy-books.html">Buy Books</a>
 <a class="text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-md px-2 py-1" href="/pages/sell-books.html">Sell Books</a>
 <a class="text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-md px-2 py-1" href="/pages/book-detail.html">Catalog</a>
-<a class="text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-md px-2 py-1" href="/pages/library.html">Library</a>
+<a class="active-link" href="/pages/library.html">Library</a>
 <a class="text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-md px-2 py-1" href="/pages/about.html">About Us</a>
 </div>
 
@@ -262,7 +263,8 @@
           class="flex items-center gap-2 bg-primary text-on-primary px-6 py-3 rounded-full font-label-md shadow-md hover:bg-primary-container transition-all active:scale-95"
         >
           <span class="material-symbols-outlined">add</span>
-          <span>Add New Volume</span>
+          <a href="/pages/sell-books.html" class="text-on-primary">
+            Add New Volume</a>
         </button>
 
       </div>
