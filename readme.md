@@ -89,6 +89,7 @@ old-books-marketplace/
 │   ├── sell-books.html
 │   ├── book-details.html
 │   └── about-contact.html
+│   └── library.html
 │
 ├── assets/
 │   ├── css/
