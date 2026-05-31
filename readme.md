@@ -93,17 +93,7 @@ old-books-marketplace/
 ├── assets/
 │   ├── css/
 │   ├── js/
-│   ├── images/
-│   └── data/
-│
-├── components/
-│   ├── navbar.html
-│   ├── footer.html
-│   └── book-card.html
-│
-└── docs/
-    ├── screenshots/
-    └── wireframes/
+
 ```
 
 ---
