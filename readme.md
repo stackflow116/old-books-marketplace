@@ -89,21 +89,12 @@ old-books-marketplace/
 │   ├── sell-books.html
 │   ├── book-details.html
 │   └── about-contact.html
+│   └── library.html
 │
 ├── assets/
 │   ├── css/
 │   ├── js/
-│   ├── images/
-│   └── data/
-│
-├── components/
-│   ├── navbar.html
-│   ├── footer.html
-│   └── book-card.html
-│
-└── docs/
-    ├── screenshots/
-    └── wireframes/
+
 ```
 
 ---
@@ -115,9 +106,7 @@ old-books-marketplace/
 | pages | Website pages |
 | assets/css | Stylesheets |
 | assets/js | JavaScript logic |
-| assets/images | Images and icons |
 | assets/data | Static JSON data |
-| components | Reusable HTML components |
 | docs | Documentation assets |
 | db.json | Mock API database |
 
@@ -239,38 +228,12 @@ Delete a book.
   ]
 }
 ```
-
----
-
-# Screenshots
-
-Store screenshots inside:
-
-```plaintext
-docs/screenshots/
-```
-
-Example:
-
-```md
-![Homepage](docs/screenshots/homepage.png)
-```
-
----
-
-# Wireframes
-
-Store design wireframes inside:
-
-```plaintext
-docs/wireframes/
-```
-
 ---
 
 # Future Enhancements
 
 - User authentication
+- Add Inventory system in library pages
 - Favorites system
 - Search and filtering
 - Pagination
