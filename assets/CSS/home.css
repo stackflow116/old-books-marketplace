@@ -199,6 +199,7 @@ h1.logo a {
   cursor: pointer;
 }
 
+
 /* FEATURED */
 
 .featured-section {
@@ -436,4 +437,12 @@ h1.logo a {
 
   color: #555;
   font-size: 14px;
+}
+
+/* SEARCH  box results */
+.search-results-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 50px; /* Ensures clearance for the next section */
 }

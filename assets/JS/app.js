@@ -1,4 +1,10 @@
 // ==========================
+// IMPORT — Must be at top
+// ==========================
+import { searchGoogleBooks } from "./api.js";
+
+
+// ==========================
 // CURATOR MODE
 // ==========================
 
@@ -7,18 +13,18 @@ const featuredSection = document.getElementById("featured-section");
 
 let curatorMode = false;
 
-curatorToggle.addEventListener("click", () => {
+if (curatorToggle) {
+  curatorToggle.addEventListener("click", () => {
+    curatorMode = !curatorMode;
+    curatorToggle.classList.toggle("toggle-active");
 
-  curatorMode = !curatorMode;
-
-  curatorToggle.classList.toggle("toggle-active");
-
-  if (curatorMode) {
-    featuredSection.classList.add("curator-mode");
-  } else {
-    featuredSection.classList.remove("curator-mode");
-  }
-});
+    if (curatorMode) {
+      featuredSection.classList.add("curator-mode");
+    } else {
+      featuredSection.classList.remove("curator-mode");
+    }
+  });
+}
 
 
 // ==========================
@@ -32,18 +38,15 @@ let books = [
     author: "Unknown Author",
     isbn: "978-1111111111",
     price: "$4,250",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuBrI8KxJhaCG5x8xZucRNTpN3SNhowmgs1OOhivKS5q4bpzDowuVdBzDCGTt-a1c1HU3uYdsxGBX8XyHNqScf5HPiIcY3LDFsW3xqGddti_xHQPp7z8qFGEFJozo-Y7YC6x4XjmVNSOG8EAd4tFyMfeoSYkXSab_PSHvk13oNxqUbip4uO6e1YCRvM-vMJXjRNrMqMqM4ukuLVAezpJX8tzd87sUGMDZLOK3OTW2fQoNggsZBXTsTAqwEdthiZMC7bJIM4Wn7vVvTkJ"
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBrI8KxJhaCG5x8xZucRNTpN3SNhowmgs1OOhivKS5q4bpzDowuVdBzDCGTt-a1c1HU3uYdsxGBX8XyHNqScf5HPiIcY3LDFsW3xqGddti_xHQPp7z8qFGEFJozo-Y7YC6x4XjmVNSOG8EAd4tFyMfeoSYkXSab_PSHvk13oNxqUbip4uO6e1YCRvM-vMJXjRNrMqMqM4ukuLVAezpJX8tzd87sUGMDZLOK3OTW2fQoNggsZBXTsTAqwEdthiZMC7bJIM4Wn7vVvTkJ"
   },
-
   {
     id: 2,
     title: "Nocturnal Voyages",
     author: "Henry Blake",
     isbn: "978-2222222222",
     price: "$890",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAbQJ2ARfjSDOwCCbT0yFovFGJiSoMI9TQoz_euvvNhAc7iDoYMEdSDBISE5TwGbDlo_QF5SmOy282bcDFeRdszl5RdtEQjC-nHEl4jGCAYBPoe0i1wJU9xZ06hKlEYnZdNeJVSrJ_UzVHahS25Ed9rL3MIQxO0PRSjoZB5IzS8FaJxM0uEOb6csM9yK8pY82tagJ4by8KqhZFVLCOf4nPsq7PUppXrM_Slx8CbiO1x9iPCJmynwfm7SZPc_hxX36nxY_DnZLVC7mTY"
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAbQJ2ARfjSDOwCCbT0yFovFGJiSoMI9TQoz_euvvNhAc7iDoYMEdSDBISE5TwGbDlo_QF5SmOy282bcDFeRdszl5RdtEQjC-nHEl4jGCAYBPoe0i1wJU9xZ06hKlEYnZdNeJVSrJ_UzVHahS25Ed9rL3MIQxO0PRSjoZB5IzS8FaJxM0uEOb6csM9yK8pY82tagJ4by8KqhZFVLCOf4nPsq7PUppXrM_Slx8CbiO1x9iPCJmynwfm7SZPc_hxX36nxY_DnZLVC7mTY"
   }
 ];
 
@@ -53,15 +56,10 @@ let books = [
 // ==========================
 
 const bookGrid = document.getElementById("book-grid");
-
 const addBookBtn = document.getElementById("add-book-btn");
-
 const titleInput = document.getElementById("book-title");
-
 const authorInput = document.getElementById("book-author");
-
 const isbnInput = document.getElementById("book-isbn");
-
 const priceInput = document.getElementById("book-price");
 
 
@@ -71,54 +69,36 @@ const priceInput = document.getElementById("book-price");
 
 function renderBooks() {
 
+  if (!bookGrid) return; // ✅ Stop if not on admin page
+
   bookGrid.innerHTML = "";
 
   books.forEach((book) => {
 
     const bookCard = document.createElement("div");
-
     bookCard.classList.add("book-card");
-
     bookCard.dataset.id = book.id;
 
     bookCard.innerHTML = `
-    
       <div class="book-image-wrapper">
-
         <img src="${book.image}" alt="${book.title}" />
-
         <div class="curator-controls">
-
           <button class="edit-btn">
             <span class="material-symbols-outlined">edit</span>
           </button>
-
           <button class="delete-btn">
             <span class="material-symbols-outlined">delete</span>
           </button>
-
         </div>
-
       </div>
-
       <h4>${book.title}</h4>
-
-      <p class="book-meta">
-        Author: ${book.author}
-      </p>
-
-      <p class="book-meta">
-        ISBN: ${book.isbn}
-      </p>
-
+      <p class="book-meta">Author: ${book.author}</p>
+      <p class="book-meta">ISBN: ${book.isbn}</p>
       <div class="book-footer">
-
         <span class="price-tag">${book.price}</span>
-
         <button class="bookmark-btn">
           <span class="material-symbols-outlined">bookmark</span>
         </button>
-
       </div>
     `;
 
@@ -131,42 +111,37 @@ function renderBooks() {
 // ADD BOOK
 // ==========================
 
-addBookBtn.addEventListener("click", () => {
+if (addBookBtn) { // ✅ Only runs on admin page
+  addBookBtn.addEventListener("click", () => {
 
-  const title = titleInput.value.trim();
+    const title = titleInput.value.trim();
+    const author = authorInput.value.trim();
+    const isbn = isbnInput.value.trim();
+    const price = priceInput.value.trim();
 
-  const author = authorInput.value.trim();
+    if (!title || !author || !isbn || !price) {
+      alert("Please fill all fields.");
+      return;
+    }
 
-  const isbn = isbnInput.value.trim();
+    const newBook = {
+      id: Date.now(),
+      title,
+      author,
+      isbn,
+      price,
+      image: "https://via.placeholder.com/300x400?text=Book+Cover"
+    };
 
-  const price = priceInput.value.trim();
+    books.push(newBook);
+    renderBooks();
 
-  if (!title || !author || !isbn || !price) {
-
-    alert("Please fill all fields.");
-
-    return;
-  }
-
-  const newBook = {
-    id: Date.now(),
-    title,
-    author,
-    isbn,
-    price,
-    image:
-      "https://via.placeholder.com/300x400?text=Book+Cover"
-  };
-
-  books.push(newBook);
-
-  renderBooks();
-
-  titleInput.value = "";
-  authorInput.value = "";
-  isbnInput.value = "";
-  priceInput.value = "";
-});
+    titleInput.value = "";
+    authorInput.value = "";
+    isbnInput.value = "";
+    priceInput.value = "";
+  });
+}
 
 
 // ==========================
@@ -176,79 +151,36 @@ addBookBtn.addEventListener("click", () => {
 document.addEventListener("click", (e) => {
 
   const editBtn = e.target.closest(".edit-btn");
-
   const deleteBtn = e.target.closest(".delete-btn");
 
-
-  // ======================
-  // EDIT
-  // ======================
-
   if (editBtn) {
-
     const card = editBtn.closest(".book-card");
-
     const id = Number(card.dataset.id);
-
     const book = books.find((b) => b.id === id);
 
     if (!book) return;
 
-    const newTitle = prompt(
-      "Enter Book Name:",
-      book.title
-    );
+    const newTitle = prompt("Enter Book Name:", book.title);
+    const newAuthor = prompt("Enter Author Name:", book.author);
+    const newISBN = prompt("Enter ISBN:", book.isbn);
+    const newPrice = prompt("Enter Price:", book.price);
 
-    const newAuthor = prompt(
-      "Enter Author Name:",
-      book.author
-    );
-
-    const newISBN = prompt(
-      "Enter ISBN:",
-      book.isbn
-    );
-
-    const newPrice = prompt(
-      "Enter Price:",
-      book.price
-    );
-
-    if (
-      newTitle &&
-      newAuthor &&
-      newISBN &&
-      newPrice
-    ) {
-
+    if (newTitle && newAuthor && newISBN && newPrice) {
       book.title = newTitle;
       book.author = newAuthor;
       book.isbn = newISBN;
       book.price = newPrice;
-
       renderBooks();
     }
   }
 
-
-  // ======================
-  // DELETE
-  // ======================
-
   if (deleteBtn) {
-
     const card = deleteBtn.closest(".book-card");
-
     const id = Number(card.dataset.id);
-
-    const confirmDelete = confirm(
-      "Remove this book?"
-    );
+    const confirmDelete = confirm("Remove this book?");
 
     if (confirmDelete) {
-
       books = books.filter((book) => book.id !== id);
-
       renderBooks();
     }
   }
@@ -261,16 +193,12 @@ document.addEventListener("click", (e) => {
 
 const booksContainer = document.querySelector(".books-container");
 
-booksContainer.addEventListener(
-  "wheel",
-  (e) => {
-
+if (booksContainer) { // ✅ Only runs if container exists
+  booksContainer.addEventListener("wheel", (e) => {
     e.preventDefault();
-
     booksContainer.scrollLeft += e.deltaY;
-  },
-  { passive: false }
-);
+  }, { passive: false });
+}
 
 
 // ==========================
@@ -279,41 +207,49 @@ booksContainer.addEventListener(
 
 renderBooks();
 
+
 // ==========================
-// Search Google Books 
+// GOOGLE BOOKS SEARCH
 // ==========================
-import { searchBooks } from "./api.js";
 
-document
-.getElementById("searchBtn")
-.addEventListener("click", async () => {
+const searchBtn = document.getElementById("searchBtn");
 
-    const query =
-        document.getElementById("searchInput").value;
+if (searchBtn) { //  Only runs if search button exists
+  searchBtn.addEventListener("click", async () => {
 
-    const books =
-        await searchBooks(query);
+    const query = document.getElementById("searchInput").value;
 
-    displayBooks(books);
-});
+    if (!query.trim()) return;
 
-function displayBooks(books) {
+    const results = await searchGoogleBooks(query);
 
-    const container =
-        document.getElementById("google-books");
+    displayBooks(results);
+  });
+}
 
-    container.innerHTML = "";
+function displayBooks(results) {
 
-    books.forEach(book => {
+  const container = document.getElementById("google-books");
 
-        const info = book.volumeInfo;
+  if (!container) return; //  Safety check
 
-        container.innerHTML += `
-            <div class="book-card">
-                <img src="${info.imageLinks?.thumbnail || ''}">
-                <h3>${info.title}</h3>
-                <p>${info.authors?.join(", ") || "Unknown"}</p>
-            </div>
-        `;
-    });
+  container.innerHTML = "";
+
+  if (results.length === 0) {
+    container.innerHTML = "<p>No books found.</p>";
+    return;
+  }
+
+  results.forEach(book => {
+
+    const info = book.volumeInfo;
+
+    container.innerHTML += `
+      <div class="book-card">
+        <img src="${info.imageLinks?.thumbnail || ''}" alt="${info.title}">
+        <h3>${info.title}</h3>
+        <p>${info.authors?.join(", ") || "Unknown"}</p>
+      </div>
+    `;
+  });
 }

@@ -128,21 +128,35 @@ export async function deleteBook(id) {
 // ================================
 
 export async function searchGoogleBooks(query) {
-    try {
-        const response = await fetch(
-            `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(query)}`
-        );
+  try {
+    const API_KEY = "AIzaSyAdni59aZj0eZFA7lfQi_LbvQryPsI0olQ";
 
-        if (!response.ok) {
-            throw new Error("Google Books API Error");
-        }
+    const response = await fetch(
+      `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(query)}&key=${API_KEY}`
+    );
 
-        const data = await response.json();
-
-        return data.items || [];
-
-    } catch (error) {
-        console.error("Google Books Error:", error);
-        return [];
+    if (!response.ok) {
+      throw new Error("Google Books API Error");
     }
+
+    const data = await response.json();
+    return data.items || [];
+
+  } catch (error) {
+    console.error("Google Books Error:", error);
+    return [];
+  }
+}
+
+// ================================
+// SEARCH Books
+// ================================
+
+export async function searchBooks(keyword) {
+
+    const response = await fetch(
+        `http://localhost:3000/books?q=${encodeURIComponent(keyword)}`
+    );
+
+    return await response.json();
 }

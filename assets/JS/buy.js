@@ -187,6 +187,51 @@ const CuratorApp = {
 
 CuratorApp.init();
 
+if (editBtn) {
+
+    const card = editBtn.closest(".book-card");
+
+    const id = Number(card.dataset.id);
+
+    const book = books.find((b) => b.id === id);
+
+    if (!book) return;
+
+    const newTitle = prompt(
+      "Enter Book Name:",
+      book.title
+    );
+
+    const newAuthor = prompt(
+      "Enter Author Name:",
+      book.author
+    );
+
+    const newISBN = prompt(
+      "Enter ISBN:",
+      book.isbn
+    );
+
+    const newPrice = prompt(
+      "Enter Price:",
+      book.price
+    );
+
+    if (
+      newTitle &&
+      newAuthor &&
+      newISBN &&
+      newPrice
+    ) {
+
+      book.title = newTitle;
+      book.author = newAuthor;
+      book.isbn = newISBN;
+      book.price = newPrice;
+
+      renderBooks();
+    }
+  }
 
 /////////////////////////////
 //////////////Search Books///

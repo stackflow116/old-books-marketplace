@@ -22,9 +22,10 @@
   <header class="header">
     <div class="logo-group">
       <span title="Menu" class="material-symbols-outlined menu-icon">menu</span>
-      <h1 class="logo"> <a href="/index.html">The Bookedia</a></h1>
+      <h1 class="logo" gap-6> <a href="/index.html">The Bookedia</a></h1>
     </div>
 
+    <div>
     <nav class="desktop-nav">
       <a  href="/index.html">Home</a>
       <a href="/admin.html">Dashboard</a>
@@ -33,6 +34,7 @@
       <a href="/pages/book-detail.html">Catalog</a>
       <a href="/pages/library.html">Library</a>
       <a href="/pages/about.html">About Us</a>
+      </div>
 
       <div class="curator-toggle-wrapper">
         <span>Curator</span>
@@ -44,14 +46,23 @@
     </nav>
 
     <div class="header-icons">
-      <div id="searchBtn">
-      <input type="text" id="searchInput" placeholder="Search books" box-sizing: border-box;/>
 
-<div id="google-books">
-      </div>
-      <span title="Search" class="material-symbols-outlined" hover="Search">search</span>
-      </div>
-      <span title="Cart" class="material-symbols-outlined" hover="Cart" >shopping_bag</span>
+  <!-- search container -->
+    <!-- Only one button with id="headerSearchBtn" -->
+      <button  id="headerSearchBtn" class="text-primary hover:bg-surface-container-high transition-colors p-2 rounded-full">
+        <span title="Search" id="headerSearchBtn" class="material-symbols-outlined">search</span>
+      </button>
+    
+    <button class="text-primary hover:bg-surface-container-high transition-colors p-2 rounded-full relative">
+        <span  title="Shopping Cart" class="material-symbols-outlined">shopping_bag</span>
+
+        <span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full"></span>
+      </button>
+
+  </div>
+
+</div>
+
     </div>
   </header>
 
@@ -65,14 +76,22 @@
 
       <h2>Curating the World's Lost Chapters</h2>
 
-      <div class="search-box" id="searchBtn">
-        <span class="material-symbols-outlined">search</span>
+      <!--Search container-->
+      
+      <div class="search-box">
+  <span class="material-symbols-outlined">search</span>
 
-        <input type="text"placeholder="Search by title, author, or era..."/>
+  <input id="searchInput" type="text" placeholder="Search Books and volumes by title, author, or ISBN ..." />
 
-        <button>Search</button>
-      </div>
+  <button id="searchBtn">Search</button>
+</div>
+
+    <div id="google-books" class="search-results-container"></div>
     </div>
+    
+
+
+
   </section>
 
   <!-- FEATURED BOOKS -->
@@ -196,7 +215,6 @@
     </div>
   </section>
 
-  <script src="/assets/JS/app.js"></script>
   <script type="module" src="/assets/JS/app.js"></script>
 </body>
 </html>
