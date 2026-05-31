@@ -93,34 +93,87 @@ document
     });
   });
 
-function simulateUpload(container, type) {
-  container.innerHTML = `
+const coverUpload = document.getElementById("cover-upload");
+const spineUpload = document.getElementById("spine-upload");
+
+/*
+|--------------------------------------------------------------------------
+| Cover Upload
+|--------------------------------------------------------------------------
+*/
+
+coverUpload.addEventListener("change", function () {
+  const file = this.files[0];
+
+  if (!file) return;
+
+  const uploadBox = this.parentElement;
+
+  uploadBox.innerHTML = `
     <div class="flex flex-col items-center justify-center">
       <span class="material-symbols-outlined text-4xl text-green-700">
         task_alt
       </span>
 
       <span class="upload-label">
-        ${type} Uploaded
+        Cover Uploaded
       </span>
     </div>
   `;
 
-  container.style.borderStyle = "solid";
-  container.style.background = "#d7e9bd";
+  uploadBox.style.borderStyle = "solid";
+  uploadBox.style.background = "#d7e9bd";
 
-  if (type === "Cover") {
+  /*
+  |--------------------------------------------------------------------------
+  | Live Preview Image
+  |--------------------------------------------------------------------------
+  */
 
+  const reader = new FileReader();
+
+  reader.onload = function (e) {
     const preview = document.getElementById(
       "preview-image-container"
     );
 
     preview.innerHTML = `
       <img
-        src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=1200&auto=format&fit=crop"
+        src="${e.target.result}"
         class="w-full h-full object-cover rounded-[10px]"
         alt="Book Cover"
       />
     `;
-  }
-}
+  };
+
+  reader.readAsDataURL(file);
+});
+
+/*
+|--------------------------------------------------------------------------
+| Spine Upload
+|--------------------------------------------------------------------------
+*/
+
+spineUpload.addEventListener("change", function () {
+  const file = this.files[0];
+
+  if (!file) return;
+
+  const uploadBox = this.parentElement;
+
+  uploadBox.innerHTML = `
+    <div class="flex flex-col items-center justify-center">
+      <span class="material-symbols-outlined text-4xl text-green-700">
+        task_alt
+      </span>
+
+      <span class="upload-label">
+        Spine Uploaded
+      </span>
+    </div>
+  `;
+
+  uploadBox.style.borderStyle = "solid";
+  uploadBox.style.background = "#d7e9bd";
+});

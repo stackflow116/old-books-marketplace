@@ -68,7 +68,7 @@
 
     <nav class="desktop-nav">
           <a  href="/index.html">Home</a>
-      <a href="/pages/admin.html">Dashboard</a>
+      <a href="/admin.html">Dashboard</a>
       <a href="/pages/buy-books.html">Buy Books</a>
       <a class="active-link" href="/pages/sell-books.html">Sell Books</a>
       <a href="/pages/book-detail.html">Catalog</a>
@@ -172,11 +172,7 @@
                 <label class="input-label">Book Title</label>
 
                 <input
-                  id="input-title"
-                  type="text"
-                  class="text-input"
-                  placeholder="The Name of the Rose"
-                />
+                  id="input-title" type="text" class="text-input" placeholder="The psychology of Money"/>
               </div>
 
               <div>
@@ -225,31 +221,33 @@
 
                 <div class="upload-grid">
 
-                  <div
-                    class="upload-box"
-                    onclick="simulateUpload(this, 'Cover')"
-                  >
-                    <span class="material-symbols-outlined">
-                      add_a_photo
-                    </span>
+                  <div class="upload-box" onclick="document.getElementById('cover-upload').click()">
+  <input
+    type="file"
+    id="cover-upload"
+    accept="image/*"
+    hidden
+  />
 
-                    <span class="upload-label">
-                      Cover Photo
-                    </span>
-                  </div>
+  <span class="material-symbols-outlined">
+    add_a_photo
+  </span>
 
-                  <div
-                    class="upload-box"
-                    onclick="simulateUpload(this, 'Spine')"
-                  >
-                    <span class="material-symbols-outlined">
-                      add_a_photo
-                    </span>
+  <span class="upload-label">
+    Cover Photo
+  </span>
+</div>
 
-                    <span class="upload-label">
-                      Spine / Interior
-                    </span>
-                  </div>
+<div class="upload-box" onclick="document.getElementById('spine-upload').click()">
+    <input type="file" id="spine-upload"  accept="image/*" hidden/>
+
+  <span class="material-symbols-outlined">
+    add_a_photo
+  </span>
+  <span class="upload-label">
+    Spine / Interior
+  </span>
+</div>
 
                 </div>
 
@@ -340,12 +338,7 @@
 
                 <span class="currency-symbol">$</span>
 
-                <input
-                  id="price-input"
-                  type="number"
-                  class="price-input"
-                  placeholder="0.00"
-                />
+                <input id="price-input" type="number" step="any" class="price-input" placeholder="0.00"/>
 
               </div>
 

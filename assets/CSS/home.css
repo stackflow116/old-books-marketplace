@@ -396,3 +396,44 @@ h1.logo a {
     width: 100%;
   }
 }
+
+/* BOOK FORM */
+
+.book-form-wrapper {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+
+  margin-bottom: 40px;
+}
+
+.book-form-wrapper input {
+  padding: 12px 14px;
+
+  border: 1px solid #ccc;
+  outline: none;
+
+  min-width: 200px;
+
+  font-family: Manrope, sans-serif;
+}
+
+.book-form-wrapper button {
+  border: none;
+
+  background: #280e06;
+  color: white;
+
+  padding: 12px 20px;
+
+  cursor: pointer;
+}
+
+/* EXTRA BOOK INFO */
+
+.book-meta {
+  margin-top: 8px;
+
+  color: #555;
+  font-size: 14px;
+}
