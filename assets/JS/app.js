@@ -14,7 +14,7 @@ const STATE = {
     currentPage: 1,
     pageSize: 6
   },
-  apiBase: 'http://localhost:3000/books',
+  apiBase: 'https://6a2554015447714a6f8356ca.mockapi.io/books',
   loading: false,
   error: null
 };
@@ -158,7 +158,7 @@ function showErrorMessage() {
       <div class="col-12 text-center py-5">
         <span class="material-symbols-outlined text-danger fs-1">error</span>
         <h4 class="mt-3">Archival Connection Interrupted</h4>
-        <p class="text-muted-custom">Please verify that json-server is running at port 3000.</p>
+        <p class="text-muted-custom">Unable to reach the archive database. Please check your connection.</p>
         <button class="btn btn-primary-custom mt-3" onclick="fetchBooks()">Retry Connection</button>
       </div>`;
   }
