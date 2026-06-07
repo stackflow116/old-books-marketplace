@@ -1,0 +1,105 @@
+/* Custom Styles for The Bookedia Vintage Marketplace */
+:root {
+  --primary-color: #321716;
+  --primary-hover: #4a2c2a;
+  --secondary-color: #af2b3e;
+  --secondary-hover: #8e0f28;
+  --background-color: #fef9ed;
+  --surface-color: #ffffff;
+  --text-primary: #1d1c15;
+  --text-muted: #504443;
+  --border-color: #d4c3c1;
+  --card-bg: #ffffff;
+  --bg-dim: #f2ede2;
+  --bg-low: #f8f3e7;
+}
+/* Dark Mode Overrides */
+[data-bs-theme="dark"] {
+  --primary-color: #eabcb8;
+  --primary-hover: #ffdada;
+  --secondary-color: #ffb3b5;
+  --secondary-hover: #ffdad7;
+  --background-color: #1d1c15;
+  --surface-color: #2e1413;
+  --text-primary: #f5f0e4;
+  --text-muted: #d4c3c1;
+  --border-color: #504443;
+  --card-bg: #321716;
+  --bg-dim: #23382d;
+  --bg-low: #323029;
+}
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--background-color) !important;
+  color: var(--text-primary) !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+h1, h2, h3, h4, h5, h6, .brand-font {
+  font-family: 'Playfair Display', serif;
+}
+.bg-parchment {
+  background-color: var(--background-color) !important;
+  background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+}
+.custom-card {
+  background-color: var(--card-bg) !important;
+  border: 1px solid var(--border-color) !important;
+  transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s ease;
+  color: var(--text-primary) !important;
+}
+.custom-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(74, 44, 42, 0.12);
+}
+.text-muted-custom {
+  color: var(--text-muted) !important;
+}
+.border-custom {
+  border-color: var(--border-color) !important;
+}
+/* Custom Nav theme for Admin Panel */
+.admin-navbar {
+  background-color: #0e2318 !important; /* Rich Dark Green distinction */
+}
+/* Buttons */
+.btn-primary-custom {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  border: none;
+  transition: all 0.2s ease;
+}
+.btn-primary-custom:hover {
+  background-color: var(--primary-hover);
+  color: var(--background-color);
+}
+.btn-secondary-custom {
+  border: 1px solid var(--secondary-color);
+  color: var(--secondary-color);
+  background: transparent;
+  transition: all 0.2s ease;
+}
+.btn-secondary-custom:hover {
+  background-color: var(--secondary-color);
+  color: #ffffff;
+}
+/* Form Styling */
+.form-signature-input {
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 2px solid var(--border-color) !important;
+  border-radius: 0 !important;
+  color: var(--text-primary) !important;
+}
+.form-signature-input:focus {
+  outline: none !important;
+  border-bottom: 2px solid var(--primary-color) !important;
+  box-shadow: none !important;
+}
+/* Micro-animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-in-element {
+  animation: fadeIn 0.5s ease forwards;
+}

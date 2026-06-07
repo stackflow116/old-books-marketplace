@@ -1,217 +1,265 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>The Bookedia</title>
-  <meta name="description" content="Buy and sell old books online">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-
-  <link rel="stylesheet" href="/assets/CSS/home.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Bookedia | Rare & Antique Literature Marketplace</title>
+  <meta name="description" content="Discover, buy, and sell rare editions, historic manuscripts, and vintage literature.">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Google Material Symbols -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  <!-- Custom Styles -->
+  <link href="/assets/CSS/styles.css" rel="stylesheet">
 </head>
-
-<body>
-
-  <!-- HEADER -->
-  <header class="header">
-    <div class="logo-group">
-      <span title="Menu" class="material-symbols-outlined menu-icon">menu</span>
-      <h1 class="logo" gap-6> <a href="/index.html">The Bookedia</a></h1>
+<body class="bg-parchment min-vh-100 d-flex flex-column">
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg border-bottom border-custom sticky-top bg-body-tertiary">
+    <div class="container py-1">
+      <a class="navbar-brand brand-font fs-3 text-primary-color" href="index.html">The Bookedia</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#userNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="userNavbar">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+          <li class="nav-item"><a class="nav-link active fw-semibold" href="#marketplace-section">Browse</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sell-section">Sell a Book</a></li>
+          <li class="nav-item"><a class="nav-link" href="admin.html">Admin Access</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-3">
+          <button class="btn btn-outline-secondary btn-sm d-flex align-items-center gap-1 theme-toggle-btn" type="button">
+            <span class="material-symbols-outlined">dark_mode</span>
+          </button>
+        </div>
+      </div>
     </div>
-
-    <div>
-    <nav class="desktop-nav">
-      <a  href="/index.html">Home</a>
-      <a href="/admin.html">Dashboard</a>
-      <a href="/pages/buy-books.html">Buy Books</a>
-      <a href="/pages/sell-books.html">Sell Books</a>
-      <a href="/pages/book-detail.html">Catalog</a>
-      <a href="/pages/library.html">Library</a>
-      <a href="/pages/about.html">About Us</a>
-      </div>
-
-      <div class="curator-toggle-wrapper">
-        <span>Curator</span>
-
-        <button id="curator-toggle" class="toggle-btn">
-          <span id="toggle-dot" class="toggle-dot"></span>
-        </button>
-      </div>
-    </nav>
-
-    <div class="header-icons">
-
-  <!-- search container -->
-    <!-- Only one button with id="headerSearchBtn" -->
-      <button  id="headerSearchBtn" class="text-primary hover:bg-surface-container-high transition-colors p-2 rounded-full">
-        <span title="Search" id="headerSearchBtn" class="material-symbols-outlined">search</span>
-      </button>
-    
-    <button class="text-primary hover:bg-surface-container-high transition-colors p-2 rounded-full relative">
-        <span  title="Shopping Cart" class="material-symbols-outlined">shopping_bag</span>
-
-        <span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full"></span>
-      </button>
-
-  </div>
-
-</div>
-
+  </nav>
+  <!-- Hero Section -->
+  <header class="py-5 bg-dark text-white text-center position-relative overflow-hidden" style="background: linear-gradient(rgba(50, 23, 22, 0.75), rgba(50, 23, 22, 0.75)), url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&q=80&w=1200') no-repeat center center; background-size: cover; min-height: 400px; display: flex; align-items: center;">
+    <div class="container py-4 position-relative z-3">
+      <span class="text-uppercase tracking-widest text-secondary fw-semibold small">Est. 2026</span>
+      <h1 class="display-4 font-headline-lg mt-2 mb-3">Preserving History, One Page at a Time</h1>
+      <p class="lead max-w-2xl mx-auto mb-4">Discover rare manuscripts, signed first editions, and antique treasures from the world's most prestigious private archives.</p>
+      <a href="#marketplace-section" class="btn btn-primary-custom px-4 py-2.5">Find Your Next Chapter</a>
     </div>
   </header>
-
-  <!-- HERO -->
-  <section class="hero">
-
-    <div class="hero-overlay"></div>
-
-    <div class="hero-content">
-      <span class="hero-label">Est. 1892</span>
-
-      <h2>Curating the World's Lost Chapters</h2>
-
-      <!--Search container-->
-      
-      <div class="search-box">
-  <span class="material-symbols-outlined">search</span>
-
-  <input id="searchInput" type="text" placeholder="Search Books and volumes by title, author, or ISBN ..." />
-
-  <button id="searchBtn">Search</button>
-</div>
-
-    <div id="google-books" class="search-results-container"></div>
-    </div>
-    
-  </section>
-
-  <!-- FEATURED BOOKS -->
-  <section class="featured-section" id="featured-section">
-
-    <div class="section-heading">
-      <div>
-        <h3>Featured Rare Finds</h3>
-        <p>Authenticated first editions and historical treasures.</p>
-      </div>
-
-      <a href="/pages/book-detail.html">View Full Catalog</a>
-    </div>
-
-    <!-- BOOK FORM -->
-    <div class="books-container" id="book-grid">
-
-      <!-- BOOK CARD -->
-      <div class="book-card">
-
-        <div class="book-image-wrapper">
-          <img
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrI8KxJhaCG5x8xZucRNTpN3SNhowmgs1OOhivKS5q4bpzDowuVdBzDCGTt-a1c1HU3uYdsxGBX8XyHNqScf5HPiIcY3LDFsW3xqGddti_xHQPp7z8qFGEFJozo-Y7YC6x4XjmVNSOG8EAd4tFyMfeoSYkXSab_PSHvk13oNxqUbip4uO6e1YCRvM-vMJXjRNrMqMqM4ukuLVAezpJX8tzd87sUGMDZLOK3OTW2fQoNggsZBXTsTAqwEdthiZMC7bJIM4Wn7vVvTkJ"
-            alt="Book"
-          />
-
-          <span class="badge">EX LIBRIS</span>
-
-          <div class="curator-controls">
-            <button class="edit-btn">
-              <span class="material-symbols-outlined">edit</span>
-            </button>
-
-            <button class="delete-btn">
-              <span class="material-symbols-outlined">delete</span>
+  <!-- Main Marketplace Section -->
+  <main class="container my-5 flex-grow-1" id="marketplace-section">
+    <div class="row">
+      <!-- Sidebar Filters -->
+      <aside class="col-lg-3 mb-4">
+        <div class="card border-custom p-4 bg-body-tertiary">
+          <h5 class="brand-font mb-4 d-flex align-items-center gap-2">
+            <span class="material-symbols-outlined">filter_alt</span> Refine Archive
+          </h5>
+          <div class="mb-3">
+            <label for="filter-category" class="form-label small fw-semibold text-muted-custom">Category</label>
+            <select class="form-select" id="filter-category">
+              <option value="">All Categories</option>
+              <option value="Classic Fiction">Classic Fiction</option>
+              <option value="Historical Manuscripts">Historical Manuscripts</option>
+              <option value="Scientific Treatises">Scientific Treatises</option>
+              <option value="Poetry Anthologies">Poetry Anthologies</option>
+            </select>
+          </div>
+          <div class="mb-4">
+            <label for="filter-era" class="form-label small fw-semibold text-muted-custom">Era</label>
+            <select class="form-select" id="filter-era">
+              <option value="">All Eras</option>
+              <option value="16th Century & Prior">16th Century & Prior</option>
+              <option value="17th Century">17th Century</option>
+              <option value="18th Century">18th Century</option>
+              <option value="Victorian Era">Victorian Era</option>
+              <option value="Modernist (1900-1950)">Modernist (1900-1950)</option>
+            </select>
+          </div>
+          <hr class="border-custom">
+          <div class="d-flex justify-content-between gap-2">
+            <button class="btn btn-sm btn-outline-secondary w-50" onclick="exportFilteredData('csv')">Export CSV</button>
+            <button class="btn btn-sm btn-outline-secondary w-50" onclick="exportFilteredData('json')">Export JSON</button>
+          </div>
+        </div>
+      </aside>
+      <!-- Book Catalog Grid -->
+      <section class="col-lg-9">
+        <div class="row mb-4 align-items-center">
+          <div class="col-md-6 mb-3 mb-md-0">
+            <div class="input-group">
+              <span class="input-group-text bg-transparent border-end-0"><span class="material-symbols-outlined">search</span></span>
+              <input type="text" class="form-control border-start-0" id="search-input" placeholder="Search by author, title, keyword...">
+            </div>
+          </div>
+          <div class="col-md-6 d-flex justify-content-md-end align-items-center gap-2">
+            <span class="small text-muted-custom">Sort by:</span>
+            <select class="form-select form-select-sm w-auto" id="sort-select">
+              <option value="recently_added">Recently Added</option>
+              <option value="price">Valuation</option>
+              <option value="title">Title</option>
+            </select>
+            <button class="btn btn-sm btn-outline-secondary" id="sort-dir-btn">
+              <span class="material-symbols-outlined">arrow_downward</span>
             </button>
           </div>
         </div>
-
-        <h4>The Alchemist's Ledger</h4>
-
-        <p class="book-info">Circa 1745 • London</p>
-
-        <div class="book-footer">
-          <span class="price-tag">$4,250</span>
-
-          <button class="bookmark-btn">
-            <span class="material-symbols-outlined">bookmark</span>
-          </button>
+        <div class="row" id="books-container">
+          <!-- Dynamically populated card decks -->
         </div>
-      </div>
-
-      <!-- BOOK CARD -->
-      <div class="book-card">
-
-        <div class="book-image-wrapper">
-          <img
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbQJ2ARfjSDOwCCbT0yFovFGJiSoMI9TQoz_euvvNhAc7iDoYMEdSDBISE5TwGbDlo_QF5SmOy282bcDFeRdszl5RdtEQjC-nHEl4jGCAYBPoe0i1wJU9xZ06hKlEYnZdNeJVSrJ_UzVHahS25Ed9rL3MIQxO0PRSjoZB5IzS8FaJxM0uEOb6csM9yK8pY82tagJ4by8KqhZFVLCOf4nPsq7PUppXrM_Slx8CbiO1x9iPCJmynwfm7SZPc_hxX36nxY_DnZLVC7mTY"
-            alt="Book"
-          />
-
-          <div class="curator-controls">
-            <button class="edit-btn">
-              <span class="material-symbols-outlined">edit</span>
-            </button>
-
-            <button class="delete-btn">
-              <span class="material-symbols-outlined">delete</span>
-            </button>
-          </div>
-        </div>
-
-        <h4>Nocturnal Voyages</h4>
-
-        <p class="book-info">1912 • First Edition</p>
-
-        <div class="book-footer">
-          <span class="price-tag">$890</span>
-
-          <button class="bookmark-btn">
-            <span class="material-symbols-outlined">bookmark</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- BOOK CARD -->
-      <div class="book-card">
-
-        <div class="book-image-wrapper">
-          <img
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9s4qAz3XO33P_h_GNMoLFuThqAbBZgH7mDCyrnXtUioWEGnVDmDrgSzdj3blvmc3a6e4KccIwpZUglEIY3cIlbQti52UibJ4ObbUOqbFi_JMlTbhxWA04uwuFuD3feTU22ZLuYlQpdBAuw8GS7PJQYp9bvv-1SrJSQtk7pmYb48279Aym6FoIi6qYxA25k1SfM9vxHDQkDOukBKuLRcL-nkZMhQ5UlrPDv8M2ncGQOWecGngsuS37SquMrvVMS_I9xc59c1mVrvc8"
-            alt="Book"
-          />
-
-          <span class="badge mint">MINT CONDITION</span>
-
-          <div class="curator-controls">
-            <button class="edit-btn">
-              <span class="material-symbols-outlined">edit</span>
-            </button>
-
-            <button class="delete-btn">
-              <span class="material-symbols-outlined">delete</span>
-            </button>
-          </div>
-        </div>
-
-        <h4>Archival Journals (Lot 4)</h4>
-
-        <p class="book-info">Hand-bound • 1860s</p>
-
-        <div class="book-footer">
-          <span class="price-tag">$1,200</span>
-
-          <button class="bookmark-btn">
-            <span class="material-symbols-outlined">bookmark</span>
-          </button>
-        </div>
-      </div>
-
+        <!-- Pagination -->
+        <nav class="mt-4" id="pagination-nav"></nav>
+      </section>
     </div>
-  </section>
-
-  <script type="module" src="/assets/JS/app.js"></script>
+    <!-- Sell Form Section -->
+    <section class="border-top border-custom pt-5 mt-5" id="sell-section">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="text-center mb-5">
+            <span class="text-uppercase tracking-widest text-secondary fw-semibold small">Curator Portal</span>
+            <h2 class="brand-font display-6 mt-2 text-primary-color">List a Rare Discovery</h2>
+            <p class="text-muted-custom">Describe your literary treasure to matching collectors worldwide.</p>
+          </div>
+          <!-- Google Books API Helper Lookup -->
+          <div class="card p-4 border-custom bg-body-tertiary mb-4">
+            <h6 class="brand-font mb-2">Automate listing details using Google Books API</h6>
+            <div class="input-group">
+              <input type="text" class="form-control" id="isbn-lookup-input" placeholder="Enter ISBN or Book Title (e.g. 9780747532699)">
+              <button class="btn btn-primary-custom" type="button" id="google-books-search-btn">Search API</button>
+            </div>
+            <div id="lookup-feedback" class="d-none"></div>
+          </div>
+          <!-- Sell Form -->
+          <form id="sell-book-form" novalidate>
+            <div id="form-success-alert" class="alert alert-success d-none mb-4" role="alert">
+              Your book listing was successfully published to the archive database!
+            </div>
+            
+            <div class="row g-4">
+              <div class="col-md-6">
+                <label for="title" class="form-label small fw-semibold text-muted-custom">Full Title *</label>
+                <input type="text" class="form-control form-signature-input" id="title" required placeholder="e.g. Harry Potter and the Philosopher's Stone">
+                <div class="invalid-feedback">Please provide the book's full title.</div>
+              </div>
+              <div class="col-md-6">
+                <label for="author" class="form-label small fw-semibold text-muted-custom">Author / Scribe *</label>
+                <input type="text" class="form-control form-signature-input" id="author" required placeholder="e.g. J.K. Rowling">
+                <div class="invalid-feedback">Please provide the author.</div>
+              </div>
+              <div class="col-md-6">
+                <label for="category-select" class="form-label small fw-semibold text-muted-custom">Category *</label>
+                <select class="form-select form-signature-input" id="category-select">
+                  <option>Classic Fiction</option>
+                  <option>Historical Manuscripts</option>
+                  <option>Scientific Treatises</option>
+                  <option>Poetry Anthologies</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label for="era-select" class="form-label small fw-semibold text-muted-custom">Publication Era *</label>
+                <select class="form-select form-signature-input" id="era-select">
+                  <option>16th Century & Prior</option>
+                  <option>17th Century</option>
+                  <option>18th Century</option>
+                  <option>Victorian Era</option>
+                  <option>Modernist (1900-1950)</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label for="price" class="form-label small fw-semibold text-muted-custom">Desired Valuation (USD) *</label>
+                <input type="number" class="form-control form-signature-input" id="price" required placeholder="e.g. 350.00">
+                <div class="invalid-feedback">Price must be a valid positive valuation.</div>
+              </div>
+              <div class="col-md-6">
+                <label for="condition" class="form-label small fw-semibold text-muted-custom">Condition *</label>
+                <select class="form-select form-signature-input" id="condition">
+                  <option>Fine</option>
+                  <option>Near Fine</option>
+                  <option>Very Good</option>
+                  <option>Good</option>
+                  <option>Fair</option>
+                </select>
+              </div>
+              <div class="col-md-12">
+                <label for="seller" class="form-label small fw-semibold text-muted-custom">Seller Name / Institution *</label>
+                <input type="text" class="form-control form-signature-input" id="seller" required placeholder="e.g. LondonRareManuscripts">
+                <div class="invalid-feedback">Please provide your seller identifier.</div>
+              </div>
+              <div class="col-12">
+                <label for="description" class="form-label small fw-semibold text-muted-custom">Description & Provenance *</label>
+                <textarea class="form-control form-signature-input" id="description" required rows="3" placeholder="Describe the physical features, cover quality, any inscriptions..."></textarea>
+                <div class="invalid-feedback">Provide a short detail about the book's history.</div>
+              </div>
+              <div class="col-12 d-flex align-items-center gap-4">
+                <div style="width: 100px; height: 130px;" class="bg-body-secondary border rounded overflow-hidden flex-shrink-0 d-flex align-items-center justify-content-center">
+                  <img id="book-cover-preview" src="https://images.unsplash.com/photo-1618666012174-83b441c0bc76?auto=format&fit=crop&q=80&w=600" class="w-100 h-100 object-cover" alt="Preview">
+                </div>
+                <div class="flex-grow-1">
+                  <p class="small text-muted mb-0">Cover Illustration auto-matched via Google API when lookup is performed, or falls back to system generic image.</p>
+                </div>
+              </div>
+              <div class="col-12 text-end">
+                <button type="submit" class="btn btn-primary-custom px-5 py-3">List Book</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Book Detail Modal -->
+  <div class="modal fade" id="bookDetailModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content border-0 custom-card">
+        <div class="modal-header border-bottom border-custom p-4">
+          <h5 class="modal-title brand-font fs-4 text-primary-color" id="detail-title">Book Inspect</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <div class="row g-4">
+            <div class="col-md-4 text-center">
+              <img id="detail-cover" class="img-fluid rounded border border-custom" alt="Cover Image" style="max-height: 300px; object-fit: cover;">
+            </div>
+            <div class="col-md-8">
+              <p class="text-secondary small fw-bold mb-1" id="detail-category">Category</p>
+              <h3 class="brand-font mb-2 text-primary-color" id="detail-title-secondary"></h3>
+              <p class="text-muted-custom italic fs-6 mb-4" id="detail-author">By Author</p>
+              
+              <div class="row g-3 mb-4">
+                <div class="col-6 col-sm-3">
+                  <span class="d-block small text-muted">Era</span>
+                  <strong class="small text-primary-color" id="detail-era">Unknown</strong>
+                </div>
+                <div class="col-6 col-sm-3">
+                  <span class="d-block small text-muted">Condition</span>
+                  <strong class="small text-primary-color" id="detail-condition">Unknown</strong>
+                </div>
+                <div class="col-6 col-sm-3">
+                  <span class="d-block small text-muted">Seller</span>
+                  <strong class="small text-primary-color" id="detail-seller">Unknown</strong>
+                </div>
+                <div class="col-6 col-sm-3">
+                  <span class="d-block small text-muted">Valuation</span>
+                  <strong class="small text-primary-color fs-5" id="detail-price">$0.00</strong>
+                </div>
+              </div>
+              <hr class="border-custom">
+              <p class="text-muted-custom" id="detail-description">Description details go here...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer -->
+  <footer class="bg-body-tertiary border-top border-custom py-4 mt-auto">
+    <div class="container text-center">
+      <p class="brand-font fs-5 text-primary-color mb-1">The Bookedia</p>
+      <p class="small text-muted-custom mb-0">&copy; 2026 The Bookedia. Preservation through circulation.</p>
+    </div>
+  </footer>
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Application logic -->
+  <script src="/assets/JS/app.js"></script>
 </body>
 </html>

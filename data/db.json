@@ -1,0 +1,74 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "category": "Classic Fiction",
+      "price": 2450.00,
+      "condition": "Fine",
+      "era": "Modernist (1900-1950)",
+      "description": "A rare inaugural 1925 printing of F. Scott Fitzgerald's masterpiece, with a clean spine and gorgeous vintage patina.",
+      "image": "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?auto=format&fit=crop&q=80&w=600",
+      "seller": "EliteRareBooks",
+      "status": "Published",
+      "dateAdded": "2026-05-15"
+    },
+    {
+      "id": "2",
+      "title": "Meditations",
+      "author": "Marcus Aurelius",
+      "category": "Historical Manuscripts",
+      "price": 850.00,
+      "condition": "Near Fine",
+      "era": "17th Century",
+      "description": "An exquisite leather-bound copy of the Stoic Emperor's private reflections, featuring ribbed spines and gold leaf accents.",
+      "image": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=600",
+      "seller": "HeritageCollections",
+      "status": "Published",
+      "dateAdded": "2026-05-18"
+    },
+    {
+      "id": "3",
+      "title": "British Wildflowers",
+      "author": "Jane Loudon",
+      "category": "Scientific Treatises",
+      "price": 1200.00,
+      "condition": "Good",
+      "era": "Victorian Era",
+      "description": "An ornate nineteenth-century botanical illustration book featuring highly detailed color plates of exotic British flora.",
+      "image": "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=600",
+      "seller": "BotanicalTreasures",
+      "status": "Published",
+      "dateAdded": "2026-05-20"
+    },
+    {
+      "id": "4",
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "category": "Classic Fiction",
+      "price": 15000.00,
+      "condition": "Fine",
+      "era": "Modernist (1900-1950)",
+      "description": "A pristine first edition printing of J.R.R. Tolkien's legendary adventure, presented in an archival-quality protective sleeve.",
+      "image": "https://images.unsplash.com/photo-1618666012174-83b441c0bc76?auto=format&fit=crop&q=80&w=600",
+      "seller": "TolkienEstate",
+      "status": "Published",
+      "dateAdded": "2026-05-22"
+    },
+    {
+      "id": "5",
+      "title": "Principia Mathematica",
+      "author": "Isaac Newton",
+      "category": "Scientific Treatises",
+      "price": 125000.00,
+      "condition": "Very Good",
+      "era": "17th Century",
+      "description": "An atmospheric vellum-bound copy of Newton's fundamental work on physical laws and mechanics.",
+      "image": "https://images.unsplash.com/photo-1474932430478-367dbb6832c1?auto=format&fit=crop&q=80&w=600",
+      "seller": "NewtonianArchives",
+      "status": "Hidden",
+      "dateAdded": "2026-05-25"
+    }
+  ]
+}
